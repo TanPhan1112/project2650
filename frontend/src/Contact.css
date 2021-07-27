@@ -1,0 +1,102 @@
+#contactForm {
+	font-family: 'Lora', serif;
+    padding: 10px;
+}
+            
+label {
+	float: left;
+    width: 100px;
+    clear: left;
+    text-align: right;
+    padding-right: 10px;
+    margin-top: 10px;
+}
+            
+#myName {
+    margin-top: 5px;
+    display: block;
+    width: 25%;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: white;
+    padding: 5px;
+    font-family: 'Lora', serif;
+}
+
+#myEmail {
+    margin-top: 5px;
+    display: block;
+    width: 25%;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: white;
+    padding: 5px;
+    font-family: 'Lora', serif;
+}
+
+#myComments {
+    margin-top: 5px;
+    display: block;
+    width: 25%;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: white;
+    padding: 5px;
+    font-family: 'Lora', serif;
+}
+
+#mySubmit {
+    margin-top: 5px;
+    margin-left: 100px;
+    width: auto;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: #2D7F3E;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Lora', serif;
+}
+
+#mySubmit:hover {
+    background-color: #667F6B;
+}
+
+@media only screen and (max-width: 1410px) {
+    #myName {
+        width: 40%;
+    }
+    #myEmail {
+        width: 40%;
+    }
+    #myComments {
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 880px) {
+    #myName {
+        width: 60%;
+    }
+    #myEmail {
+        width: 60%;
+    }
+    #myComments {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    #myName {
+        width: 50%;
+    }
+    #myEmail {
+        width: 50%;
+    }
+    #myComments {
+        width: 50%;
+    }
+}

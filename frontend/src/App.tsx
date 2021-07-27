@@ -12,6 +12,8 @@ import {
 import Home from './Home';
 import About from './About';
 import Patients from './Patients';
+import Contact from './Contact';
+import Account from './Account';
 
 const myStyles: CSSProperties = {
     borderRight: 'none'
@@ -47,15 +49,21 @@ function App() {
                             <li><a href="/">Home</a></li>
                             <li><a href="/patients-list">Products</a></li>
                             <li><a href="/About">About</a></li>
-                            <li><a style={myStyles} href="../Contact/contact.html">Contact Us</a></li>
-                            <li className="signin"><a href="../Account/account.html">Sign in/Register</a></li>
+                            <li><a style={myStyles} href="/Contact">Contact Us</a></li>
+                            <li className="signin"><a href="/Account">Sign in/Register</a></li>
                         </ul>
                     </nav>
                 </div>
             </body>
             <Switch>
+                <Route path="/Account">
+                    <Account />
+                </Route>
                 <Route path="/About">
                     <About />
+                </Route>
+                <Route path="/Contact">
+                    <Contact />
                 </Route>
                 <Route path="/patients-list">
                     <Patients />
