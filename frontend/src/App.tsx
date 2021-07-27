@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import './App.css';
 
 import {
@@ -10,49 +10,61 @@ import {
 } from "react-router-dom";
 
 import Home from './Home';
+import About from './About';
 import Patients from './Patients';
+
+const myStyles: CSSProperties = {
+    borderRight: 'none'
+}
 
 function App() {
     return (
         <Router>
-            <main>
-                <nav className="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
-                    <div className="container-fluid">
-                        <Link className="navbar-brand" to="/">Home</Link>
-                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
-
-                        <div className="collapse navbar-collapse" id="navbarsExample02">
-                            <ul className="navbar-nav me-auto">
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/patients-list">Patients</Link>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-                <div className="container">
-                    <header className="d-flex justify-content-center py-3">
-                        <ul className="nav nav-pills">
-                            <li className="nav-item"><a href="#" className="nav-link active" aria-current="page">Home</a></li>
-                            <li className="nav-item"><a href="#" className="nav-link">Features</a></li>
-                            <li className="nav-item"><a href="#" className="nav-link">Pricing</a></li>
-                            <li className="nav-item"><a href="#" className="nav-link">FAQs</a></li>
-                            <li className="nav-item"><a href="#" className="nav-link">About</a></li>
-                        </ul>
+            <head>
+                <title>PC Tech</title>
+                <meta charSet="utf-8" />
+                {/* <link rel="stylesheet" href="./main.css" /> */}
+                <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet" />
+                <meta name="viewport" content="width=device-width, initital-scale=1.0" />
+                <style>
+                </style>
+            </head>
+            <body>
+                <div id="wrapper">
+                    <header>
+                        {/* https://www.pinclipart.com/pindetail/ihRTJJh_computer-pc-clipart-vector-computer-pc-logo-png/ */}
+                        <a href="index.html"><img src="./logo.png" width="100px" height="100px" alt="logo" /></a>
+                        <h1>PC Tech</h1>
                     </header>
+                    <div className="search">
+                        <form method="get">
+                            <input type="text" placeholder="Search products..." name="search" />
+                        </form>
+                        <a href="https://pixabay.com/illustrations/design-icon-modern-internet-sign-2381160/"><img className="basket" src="basket.png" width="50px" height="50px" alt="basket" /></a>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/patients-list">Products</a></li>
+                            <li><a href="/About">About</a></li>
+                            <li><a style={myStyles} href="../Contact/contact.html">Contact Us</a></li>
+                            <li className="signin"><a href="../Account/account.html">Sign in/Register</a></li>
+                        </ul>
+                    </nav>
                 </div>
-                <Switch>
-                    <Route path="/patients-list">
-                        <Patients />
-                    </Route>
-                    <Route path="/">
-                        <Home />
-                    </Route>
-                </Switch>
-            </main>
-        </Router>
+            </body>
+            <Switch>
+                <Route path="/About">
+                    <About />
+                </Route>
+                <Route path="/patients-list">
+                    <Patients />
+                </Route>
+                <Route path="/">
+                    <Home />
+                </Route>
+            </Switch>
+        </Router >
     );
 }
 

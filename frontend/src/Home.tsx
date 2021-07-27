@@ -4,7 +4,7 @@ function Home() {
   return (
     <div>
       <div className="py-5 text-center">
-        <h2>Home</h2>
+        <h2>Display announcements/posts/promotions</h2>
       </div>
     </div>
   );

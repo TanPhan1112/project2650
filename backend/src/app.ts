@@ -37,7 +37,12 @@ app.use(favicon(path.join(app.get('public'), 'favicon.ico')));
 app.use('/', express.static(app.get('public')));
 
 // Handle other single page app paths
-app.use('/patients-list', (req: any, res: any ) => {
+app.use('/patients-list', (req: any, res: any) => {
+  res.sendFile(path.join(app.get('public'), 'index.html'));
+});
+
+// Handle other single page app paths
+app.use('/About', (req: any, res: any) => {
   res.sendFile(path.join(app.get('public'), 'index.html'));
 });
 
