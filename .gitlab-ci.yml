@@ -12,4 +12,4 @@ build:
 deploy:
     stage: deploy
     script:
-        - gcloud run deploy project2650 --image gcr.io/$GOOGLE_CLOUD_PROJECT/project2650 --platform managed --region us-west1 --allow-unauthenticated --memory=1Gi
+        - gcloud run deploy project2650 --image gcr.io/$GOOGLE_CLOUD_PROJECT/project2650 --platform managed --region us-west1 --allow-unauthenticated --update-env-vars=MONGODBURI=$MONGODBURI --memory=1Gi
