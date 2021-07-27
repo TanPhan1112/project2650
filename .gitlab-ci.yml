@@ -1,15 +1,15 @@
-default:
-    image: google/cloud-sdk:alpine
-    before_script:
-        - gcloud config set project $GOOGLE_CLOUD_PROJECT
-        - gcloud auth activate-service-account --key-file $GOOGLE_CLOUD_CREDENTIALS
-
-build:
-    stage: build
+test:
+    image: node:12-alpine
+    stage: test
     script:
-        - gcloud builds submit --tag gcr.io/$GOOGLE_CLOUD_PROJECT/project2650
+        - yarn install
+        - yarn run test
 
 deploy:
+    image: google/cloud-sdk:alpine
     stage: deploy
     script:
+        - gcloud config set project $GOOGLE_CLOUD_PROJECT
+        - gcloud auth activate-service-account --key-file $GOOGLE_CLOUD_CREDENTIALS
+        - gcloud builds submit --tag gcr.io/$GOOGLE_CLOUD_PROJECT/project2650
         - gcloud run deploy project2650 --image gcr.io/$GOOGLE_CLOUD_PROJECT/project2650 --platform managed --region us-west1 --allow-unauthenticated --update-env-vars=MONGODBURI=$MONGODBURI --memory=1Gi
