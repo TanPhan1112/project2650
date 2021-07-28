@@ -57,6 +57,11 @@ app.use('/Account', (req: any, res: any) => {
   res.sendFile(path.join(app.get('public'), 'index.html'));
 });
 
+// Handle other single page app paths
+app.use('/Admin', (req: any, res: any) => {
+  res.sendFile(path.join(app.get('public'), 'index.html'));
+});
+
 // Set up Plugins and providers
 app.configure(express.rest());
 

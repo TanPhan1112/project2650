@@ -14,6 +14,7 @@ import About from './About';
 import Products from './Products';
 import Contact from './Contact';
 import Account from './Account';
+import Admin from './Admin';
 
 const myStyles: CSSProperties = {
     borderRight: 'none'
@@ -56,6 +57,9 @@ function App() {
                 </div>
             </body>
             <Switch>
+                <Route path="/Admin">
+                    <Admin />
+                </Route>
                 <Route path="/Account">
                     <Account />
                 </Route>

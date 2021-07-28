@@ -12,7 +12,7 @@ label {
     margin-top: 10px;
 }
 
-#firstName {
+.firstName {
     margin-top: 5px;
     display: block;
     width: 25%;
@@ -24,7 +24,7 @@ label {
     font-family: 'Lora', serif;
 }
 
-#lastName {
+.lastName {
     margin-top: 5px;
     display: block;
     width: 25%;
@@ -36,7 +36,7 @@ label {
     font-family: 'Lora', serif;
 }
 
-#myEmail {
+.myEmail {
     margin-top: 5px;
     display: block;
     width: 25%;
@@ -48,7 +48,7 @@ label {
     font-family: 'Lora', serif;
 }
 
-#passWord {
+.passWord {
     margin-top: 5px;
     display: block;
     width: 25%;
@@ -60,7 +60,7 @@ label {
     font-family: 'Lora', serif;
 }
 
-#mySubmit {
+.mySubmit {
     margin-top: 5px;
     margin-left: 100px;
     width: auto;
@@ -73,51 +73,51 @@ label {
     font-family: 'Lora', serif;
 }
 
-#mySubmit:hover {
+.mySubmit:hover {
     background-color: #667F6B;
 }
 
 @media only screen and (max-width: 1410px) {
-    #firstName {
+    .firstName {
         width: 40%;
     }
-    #lastName {
+    .lastName {
         width: 40%;
     }
-    #myEmail {
+    .myEmail {
         width: 40%;
     }
-    #passWord {
+    .passWord {
         width: 40%;
     }
 }
 
 @media only screen and (max-width: 880px) {
-    #firstName {
+    .firstName {
         width: 60%;
     }
-    #lastName {
+    .lastName {
         width: 60%;
     }
-    #myEmail {
+    .myEmail {
         width: 60%;
     }
-    #passWord {
+    .passWord {
         width: 60%;
     }
 }
 
 @media only screen and (max-width: 599px) {
-    #firstName {
+    .firstName {
         width: 50%;
     }
-    #lastName {
+    .lastName {
         width: 50%;
     }
-    #myEmail {
+    .myEmail {
         width: 50%;
     }
-    #passWord {
+    .passWord {
         width: 50%;
     }
 }

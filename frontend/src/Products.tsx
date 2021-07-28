@@ -37,6 +37,9 @@ function Products() {
                 </tr>
             </thead>
             <tbody>
+
+                {/* {productRows} */}
+
             </tbody>
         </table>
     );
