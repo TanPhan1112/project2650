@@ -1,4 +1,7 @@
 import React, { CSSProperties } from 'react';
+import { useState, useEffect, FormEvent } from 'react';
+import { Paginated } from '@feathersjs/feathers';
+import client from './feathers';
 import './App.css';
 
 import {
@@ -20,7 +23,55 @@ const myStyles: CSSProperties = {
     borderRight: 'none'
 }
 
+interface Product {
+    data: any;
+    // add the required properties here
+    name: string,
+    quantity: string,
+    price: Number,
+    brand: string
+};
+
+const productsService = client.service('products');
+
 function App() {
+    const [search, setSearch] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
+    const [errorClass, setErrorClass] = useState("form-control");
+
+    const handleSearch = async (e: FormEvent) => {
+        e.preventDefault();
+        const name = search;
+        const element = e.currentTarget as HTMLFormElement;
+        if (element.checkValidity()) {
+            element.classList.remove('was-validated');
+            const products = await productsService
+                .find({
+                    query: {
+                        name: name
+                    }
+                })
+                .then((product: Product) => {
+                    setSearch("");
+                    if (product.data[0].name !== undefined) {
+                        setErrorMessage("Product found! Yeah!!!");
+                        setErrorClass("form-control is-valid");
+                    }
+                    else if (product.data[0].length() === 0) {
+                        setErrorMessage("Product not found!");
+                        setErrorClass("form-control is-invalid");
+                    }
+                })
+                .catch((err: any) => {
+                    // failed to create account
+                    setErrorMessage("Product not found!");
+                    setErrorClass("form-control is-invalid");
+                });
+        } else {
+            element.classList.add('was-validated');
+        }
+    }
+
     return (
         <Router>
             <head>
@@ -40,8 +91,8 @@ function App() {
                         <h1>PC Tech</h1>
                     </header>
                     <div className="search">
-                        <form method="get">
-                            <input type="text" placeholder="Search products..." name="search" />
+                        <form onSubmit={handleSearch} noValidate>
+                            <input type="text" placeholder="Search products..." name="search" value={search} required onChange={e => setSearch(e.target.value)} />
                         </form>
                         <a href="https://pixabay.com/illustrations/design-icon-modern-internet-sign-2381160/"><img className="basket" src="basket.png" width="50px" height="50px" alt="basket" /></a>
                     </div>
@@ -54,6 +105,9 @@ function App() {
                             <li className="signin"><a href="/Account">Sign in/Register</a></li>
                         </ul>
                     </nav>
+                </div>
+                <div className={errorClass}>
+                    {errorMessage}
                 </div>
             </body>
             <Switch>

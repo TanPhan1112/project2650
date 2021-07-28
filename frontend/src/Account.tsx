@@ -1,7 +1,6 @@
 import React, { useState, useEffect, FormEvent } from 'react';
 import './Account.css';
 import client from './feathers';
-import { Redirect } from 'react-router';
 import { useHistory } from "react-router-dom";
 
 interface Signup {
@@ -76,10 +75,8 @@ function Account() {
 
     const handleSubmit2 = async (e: FormEvent) => {
         e.preventDefault();
-        
         const email = email1;
         const password = password1;
-
         const element = e.currentTarget as HTMLFormElement;
         if (element.checkValidity()) {
             element.classList.remove('was-validated');
@@ -122,6 +119,7 @@ function Account() {
             element.classList.add('was-validated');
         }
     }
+
     return (
         <html lang="en">
             <body>
