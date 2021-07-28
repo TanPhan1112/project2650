@@ -11,7 +11,7 @@ import {
 
 import Home from './Home';
 import About from './About';
-import Patients from './Patients';
+import Products from './Products';
 import Contact from './Contact';
 import Account from './Account';
 
@@ -47,7 +47,7 @@ function App() {
                     <nav>
                         <ul>
                             <li><a href="/">Home</a></li>
-                            <li><a href="/patients-list">Products</a></li>
+                            <li><a href="/products-list">Products</a></li>
                             <li><a href="/About">About</a></li>
                             <li><a style={myStyles} href="/Contact">Contact Us</a></li>
                             <li className="signin"><a href="/Account">Sign in/Register</a></li>
@@ -65,8 +65,8 @@ function App() {
                 <Route path="/Contact">
                     <Contact />
                 </Route>
-                <Route path="/patients-list">
-                    <Patients />
+                <Route path="/products-list">
+                    <Products />
                 </Route>
                 <Route path="/">
                     <Home />
