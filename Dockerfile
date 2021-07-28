@@ -12,6 +12,7 @@ COPY /frontend/yarn.lock ./
 
 # Install production dependencies.
 RUN yarn install
+RUN yarn build
 
 # Create and change to the app directory.
 WORKDIR /usr/src/app/backend
