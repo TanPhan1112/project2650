@@ -3,6 +3,7 @@ import './Account.css';
 import client from './feathers';
 
 interface Signup {
+    data: any;
     // add the required properties here
     firstName: string,
     lastName: string,
@@ -30,7 +31,9 @@ function Account() {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
+    const [email1, setEmail1] = useState("");
     const [password, setPassword] = useState("");
+    const [password1, setPassword1] = useState("");
     const [allAccounts, setAllAccounts] = useState<Array<Signup>>([]);
     const [errorMessage, setErrorMessage] = useState("Forms are required");
     const [errorClass, setErrorClass] = useState("form-control");
@@ -68,18 +71,66 @@ function Account() {
         }
     }
 
+    const handleSubmit2 = async (e: FormEvent) => {
+        e.preventDefault();
+        const email = email1;
+        const password = password1;
+        const element = e.currentTarget as HTMLFormElement;
+        if (element.checkValidity()) {
+            element.classList.remove('was-validated');
+            const signups = await signupsService
+                .find({
+                    query: {
+                        email: email,
+                        password: password
+                    }
+                })
+                .then((signup: Signup) => {
+                    // successfully created account
+                    // console.log(signup);
+                    // console.log(signup.data);
+                    // console.log(signup.data[0]);
+                    // console.log(signup.data[0].email);
+                    setEmail1("");
+                    setPassword1("");
+                    if (signup.data[0].email !== undefined) {
+                        if (signup.data[0].email === "pctechAdmin@pctech.com") {
+                            setErrorMessage("Admin found! Redirecting to admin page ...");
+                            setErrorClass("form-control is-valid");
+                        } else {
+                            setErrorMessage("Account found! Welcome!!!");
+                            setErrorClass("form-control is-valid");
+                        }
+                    }
+                    else if (signup.data[0].length() === 0) {
+                        setErrorMessage("Account not found! or incorrect email/password!");
+                        setErrorClass("form-control is-invalid");
+                    }
+                })
+                .catch((err: any) => {
+                    // failed to create account
+                    setErrorMessage("Account not found! or incorrect email/password!");
+                    setErrorClass("form-control is-invalid");
+                });
+        } else {
+            element.classList.add('was-validated');
+        }
+    }
+
     return (
         <html lang="en">
             <body>
                 <div id="wrapper">
                     <main>
                         <h1>Log In</h1>
-                        <form id="contactForm" method="post">
+                        <form onSubmit={handleSubmit2} noValidate>
                             <label htmlFor="myEmail">E-mail:</label>
-                            <input type="text" name="myEmail" className="myEmail" id="emailLogin" />
+                            <input type="text" name="myEmail" className="myEmail form-control" value={email1} required onChange={e => setEmail1(e.target.value)} />
+                            <div className="invalid-feedback">Email is required.</div>
                             <label htmlFor="passWord">Password:</label>
-                            <input type="password" name="passWord" className="passWord" id="pass" />
-                            <input className="mySubmit" type="submit" value="Log In" />
+                            <input type="password" name="passWord" className="passWord form-control" value={password1} required onChange={e => setPassword1(e.target.value)} />
+                            <div className="invalid-feedback">Password is required.</div>
+                            <button className="mySubmit" type="submit">Log in</button>
                         </form>
                         <h1>Create an account</h1>
                         <form onSubmit={handleSubmit1} noValidate>
