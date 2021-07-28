@@ -17,6 +17,7 @@ import services from './services';
 import appHooks from './app.hooks';
 import channels from './channels';
 import { HookContext as FeathersHookContext } from '@feathersjs/feathers';
+import mongoose from './mongoose';
 // Don't remove this comment. It's needed to format import lines nicely.
 
 const app: Application = express(feathers());
@@ -37,7 +38,7 @@ app.use(favicon(path.join(app.get('public'), 'favicon.ico')));
 app.use('/', express.static(app.get('public')));
 
 // Handle other single page app paths
-app.use('/patients-list', (req: any, res: any) => {
+app.use('/products-list', (req: any, res: any) => {
   res.sendFile(path.join(app.get('public'), 'index.html'));
 });
 
@@ -58,6 +59,9 @@ app.use('/Account', (req: any, res: any) => {
 
 // Set up Plugins and providers
 app.configure(express.rest());
+
+
+app.configure(mongoose);
 
 
 // Configure other middleware (see `middleware/index.ts`)
