@@ -10,24 +10,24 @@ function Account() {
                 <div id="wrapper">
                     <main>
                         <h1>Log In</h1>
-                        <form>
+                        <form id="contactForm" method="post">
                             <label htmlFor="myEmail">E-mail:</label>
-                            <input type="text" name="myEmail" id="Email" />
+                            <input type="text" name="myEmail" className="myEmail" id="email" />
                             <label htmlFor="passWord">Password:</label>
-                            <input type="password" name="passWord" id="pass" />
-                            <input id="Submit" type="submit" value="Log In" />
+                            <input type="password" name="passWord" className="passWord" id="pass" />
+                            <input className="mySubmit" type="submit" value="Log In" />
                         </form>
                         <h1>Create an account</h1>
                         <form className="needs-validation" noValidate>
                             <label htmlFor="firstName">First name:</label>
-                            <input type="text" name="firstName" id="firstName" />
+                            <input type="text" name="firstName" className="firstName" id="firstName" />
                             <label htmlFor="lastName">Last name:</label>
-                            <input type="text" name="lastName" id="lastName" />
+                            <input type="text" name="lastName" className="lastName" id="lastName" />
                             <label htmlFor="myEmail">E-mail:</label>
-                            <input type="text" name="myEmail" id="myEmail" />
+                            <input type="text" name="myEmail" className="myEmail" id="Email" />
                             <label htmlFor="passWord">Password:</label>
-                            <input type="password" name="passWord" id="passWord" />
-                            <input id="mySubmit" type="submit" value="Sign Up" />
+                            <input type="password" name="passWord" className="passWord" id="passWord" />
+                            <input className="mySubmit" type="submit" value="Sign Up" />
                         </form>
                     </main>
                     <footer>

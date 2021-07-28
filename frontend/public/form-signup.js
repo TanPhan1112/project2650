@@ -28,10 +28,9 @@
                     signups.create({
                         firstName: $('#firstName').val(),
                         lastName: $('#lastName').val(),
-                        email: $('#myEmail').val(),
+                        email: $('#Email').val(),
                         password: $('#passWord').val(),
-                    }).then(signup => {
-                    });
+                    })
                     form.classList.remove('was-validated');
                     form.reset();
                 } else {
