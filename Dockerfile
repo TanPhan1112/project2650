@@ -14,10 +14,6 @@ COPY /frontend/yarn.lock ./
 RUN yarn install
 
 # Create and change to the app directory.
-WORKDIR /usr/src/app/frontend
-RUN yarn build
-
-# Create and change to the app directory.
 WORKDIR /usr/src/app/backend
 
 # Copy application dependency manifests to the container image.

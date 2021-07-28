@@ -1,5 +1,5 @@
-import React, { CSSProperties } from 'react';
-import { useState, useEffect, FormEvent } from 'react';
+import React, { CSSProperties, ReactNode } from 'react';
+import { useState, FormEvent } from 'react';
 import { Paginated } from '@feathersjs/feathers';
 import client from './feathers';
 import './App.css';
@@ -24,12 +24,14 @@ const myStyles: CSSProperties = {
 }
 
 interface Product {
-    data: any;
+    _id: ReactNode;
+    data: any,
     // add the required properties here
     name: string,
     quantity: string,
-    price: Number,
-    brand: string
+    price: number,
+    brand: string,
+    id: number
 };
 
 const productsService = client.service('products');
@@ -37,7 +39,18 @@ const productsService = client.service('products');
 function App() {
     const [search, setSearch] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
+    const [allProducts, setAllProducts] = useState<Array<Product>>([]);
     const [errorClass, setErrorClass] = useState("form-control");
+
+    const productRows = allProducts.map((product: Product) =>
+        <tr key={product.id}>
+            <td>{product._id}</td>
+            <td>{product.name}</td>
+            <td>{product.quantity}</td>
+            <td>{product.price}</td>
+            <td>{product.brand}</td>
+        </tr>
+    );
 
     const handleSearch = async (e: FormEvent) => {
         e.preventDefault();
@@ -51,13 +64,13 @@ function App() {
                         name: name
                     }
                 })
-                .then((product: Product) => {
+                .then((productPage: Paginated<Product>) => {
                     setSearch("");
-                    if (product.data[0].name !== undefined) {
-                        setErrorMessage("Product found! Yeah!!!");
-                        setErrorClass("form-control is-valid");
+                    setAllProducts(productPage.data);
+                    if (productPage.data[0].name !== undefined) {
+                        setAllProducts(productPage.data);
                     }
-                    else if (product.data[0].length() === 0) {
+                    else {
                         setErrorMessage("Product not found!");
                         setErrorClass("form-control is-invalid");
                     }
@@ -109,6 +122,21 @@ function App() {
                 <div className={errorClass}>
                     {errorMessage}
                 </div>
+
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">quantity</th>
+                            <th scope="col">price</th>
+                            <th scope="col">brand</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {productRows}
+                    </tbody>
+                </table>
             </body>
             <Switch>
                 <Route path="/Admin">
