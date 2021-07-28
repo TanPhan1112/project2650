@@ -12,7 +12,7 @@ function Account() {
                         <h1>Log In</h1>
                         <form id="contactForm" method="post">
                             <label htmlFor="myEmail">E-mail:</label>
-                            <input type="text" name="myEmail" className="myEmail" id="email" />
+                            <input type="text" name="myEmail" className="myEmail" id="emailLogin" />
                             <label htmlFor="passWord">Password:</label>
                             <input type="password" name="passWord" className="passWord" id="pass" />
                             <input className="mySubmit" type="submit" value="Log In" />
@@ -24,10 +24,10 @@ function Account() {
                             <label htmlFor="lastName">Last name:</label>
                             <input type="text" name="lastName" className="lastName" id="lastName" />
                             <label htmlFor="myEmail">E-mail:</label>
-                            <input type="text" name="myEmail" className="myEmail" id="Email" />
+                            <input type="text" name="myEmail" className="myEmail" id="emailSignup" />
                             <label htmlFor="passWord">Password:</label>
                             <input type="password" name="passWord" className="passWord" id="passWord" />
-                            <input className="mySubmit" type="submit" value="Sign Up" />
+                            <button className="mySubmit" type="submit">Signup</button>
                         </form>
                     </main>
                     <footer>
@@ -44,9 +44,7 @@ function Account() {
                         <h6><i>Created by Phan, Duc Minh Tan and Nguyen, Hoang Nam</i></h6>
                     </footer>
                 </div>
-                <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/core-js/2.1.4/core.min.js"></script>
-                <script src="//unpkg.com/@feathersjs/client@^4.3.0/dist/feathers.js"></script>
-                <script src="form-signup.js"></script>
+                {/* <script src="form-signup"></script> */}
             </body>
         </html>
     );
