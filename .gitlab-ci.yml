@@ -1,6 +1,7 @@
 default:
     image: google/cloud-sdk:alpine
     before_script:
+        - cd backend
         - gcloud auth activate-service-account --key-file $GOOGLE_CLOUD_CREDENTIALS
         - gcloud config set project $GOOGLE_CLOUD_PROJECT
 
@@ -13,4 +14,4 @@ build:
 deploy:
     stage: deploy
     script:
-        - gcloud run deploy project2650 --port 8080 --image gcr.io/$GOOGLE_CLOUD_PROJECT/project2650 --platform managed --region us-west1 --allow-unauthenticated --update-env-vars=MONGODBURI=$MONGODBURI
+        - gcloud run deploy project2650 --image gcr.io/$GOOGLE_CLOUD_PROJECT/project2650 --platform managed --region us-west1 --allow-unauthenticated --update-env-vars=MONGODBURI=$MONGODBURI
