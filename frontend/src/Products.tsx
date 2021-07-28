@@ -38,7 +38,7 @@ function Products() {
             </thead>
             <tbody>
 
-                {productRows}
+                {/* {productRows} */}
 
             </tbody>
         </table>

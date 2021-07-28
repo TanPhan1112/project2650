@@ -1,5 +1,7 @@
 import React from 'react';
 import './Account.css';
+import { Paginated } from '@feathersjs/feathers';
+import client from './feathers';
 
 function Account() {
     return (
@@ -8,15 +10,15 @@ function Account() {
                 <div id="wrapper">
                     <main>
                         <h1>Log In</h1>
-                        <form id="contactForm" method="post" action="http://mylinux.langara.bc.ca/~hhamavan/demo.php">
+                        <form>
                             <label htmlFor="myEmail">E-mail:</label>
-                            <input type="text" name="myEmail" id="myEmail" />
+                            <input type="text" name="myEmail" id="Email" />
                             <label htmlFor="passWord">Password:</label>
-                            <input type="password" name="passWord" id="passWord" />
-                            <input id="mySubmit" type="submit" value="Log In" />
+                            <input type="password" name="passWord" id="pass" />
+                            <input id="Submit" type="submit" value="Log In" />
                         </form>
                         <h1>Create an account</h1>
-                        <form id="contactForm" method="post" action="http://mylinux.langara.bc.ca/~hhamavan/demo.php">
+                        <form className="needs-validation" noValidate>
                             <label htmlFor="firstName">First name:</label>
                             <input type="text" name="firstName" id="firstName" />
                             <label htmlFor="lastName">Last name:</label>
@@ -42,6 +44,9 @@ function Account() {
                         <h6><i>Created by Phan, Duc Minh Tan and Nguyen, Hoang Nam</i></h6>
                     </footer>
                 </div>
+                <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/core-js/2.1.4/core.min.js"></script>
+                <script src="//unpkg.com/@feathersjs/client@^4.3.0/dist/feathers.js"></script>
+                <script src="form-signup.js"></script>
             </body>
         </html>
     );
