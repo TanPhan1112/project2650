@@ -1,9 +1,73 @@
-import React from 'react';
+import React, { useState, useEffect, FormEvent } from 'react';
 import './Account.css';
-import { Paginated } from '@feathersjs/feathers';
 import client from './feathers';
 
+interface Signup {
+    // add the required properties here
+    firstName: string,
+    lastName: string,
+    email: string,
+    password: string
+};
+
+type SignuptFunction = (g: Signup) => void;
+
+interface AllSignupFuntions {
+    addAccount: SignuptFunction
+};
+
+let signupFuncs: AllSignupFuntions = {
+    addAccount: (c: Signup) => { }
+};
+
+const signupsService = client.service('signups');
+
+signupsService.on('created', (newAccount: Signup) => {
+    signupFuncs.addAccount(newAccount);
+});
+
 function Account() {
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [allAccounts, setAllAccounts] = useState<Array<Signup>>([]);
+    const [errorMessage, setErrorMessage] = useState("Forms are required");
+    const [errorClass, setErrorClass] = useState("form-control");
+
+    useEffect(() => {
+        function addAccountX(newAccount: Signup) {
+            setAllAccounts([...allAccounts, newAccount]);
+        }
+        signupFuncs.addAccount = addAccountX;
+    });
+
+    const handleSubmit1 = (e: FormEvent) => {
+        e.preventDefault();
+        const element = e.currentTarget as HTMLFormElement;
+        if (element.checkValidity()) {
+            element.classList.remove('was-validated');
+            signupsService
+                .create({ firstName, lastName, email, password })
+                .then((signup: Signup) => {
+                    // successfully created account
+                    setFirstName("");
+                    setLastName("");
+                    setEmail("");
+                    setPassword("");
+                    setErrorMessage("Successfully created account");
+                    setErrorClass("form-control is-valid");
+                })
+                .catch((err: any) => {
+                    // failed to create account
+                    setErrorMessage(err.message);
+                    setErrorClass("form-control is-invalid");
+                });
+        } else {
+            element.classList.add('was-validated');
+        }
+    }
+
     return (
         <html lang="en">
             <body>
@@ -18,23 +82,30 @@ function Account() {
                             <input className="mySubmit" type="submit" value="Log In" />
                         </form>
                         <h1>Create an account</h1>
-                        <form className="needs-validation" noValidate>
+                        <form onSubmit={handleSubmit1} noValidate>
                             <label htmlFor="firstName">First name:</label>
-                            <input type="text" name="firstName" className="firstName" id="firstName" />
+                            <input type="text" name="firstName" className="firstName form-control" value={firstName} required onChange={e => setFirstName(e.target.value)} />
+                            <div className="invalid-feedback">First name is required.</div>
                             <label htmlFor="lastName">Last name:</label>
-                            <input type="text" name="lastName" className="lastName" id="lastName" />
+                            <input type="text" name="lastName" className="lastName form-control" value={lastName} required onChange={e => setLastName(e.target.value)} />
+                            <div className="invalid-feedback">Last name is required.</div>
                             <label htmlFor="myEmail">E-mail:</label>
-                            <input type="text" name="myEmail" className="myEmail" id="emailSignup" />
+                            <input type="email" name="myEmail" className="myEmail form-control" value={email} required onChange={e => setEmail(e.target.value)} />
+                            <div className="invalid-feedback">Email is required.</div>
                             <label htmlFor="passWord">Password:</label>
-                            <input type="password" name="passWord" className="passWord" id="passWord" />
+                            <input type="password" name="passWord" className="passWord form-control" value={password} required onChange={e => setPassword(e.target.value)} />
+                            <div className="invalid-feedback">Password is required.</div>
                             <button className="mySubmit" type="submit">Signup</button>
+                            <div className={errorClass}>
+                                {errorMessage}
+                            </div>
                         </form>
                     </main>
                     <footer>
                         <h1>Join Our Newsletter</h1>
                         <h4>Sign up to all the latest offers, news and tips!</h4>
                         <form method="get">
-                            <input type="text" name="email" id="email" placeholder="Email address" />
+                            <input type="email" name="email" id="email" placeholder="Email address" />
                             <br></br>
                             <br></br>
                             <input className="signup" type="submit" value="Sign Me Up!" /> <input className="signup" type="reset" />
@@ -44,7 +115,6 @@ function Account() {
                         <h6><i>Created by Phan, Duc Minh Tan and Nguyen, Hoang Nam</i></h6>
                     </footer>
                 </div>
-                {/* <script src="form-signup"></script> */}
             </body>
         </html>
     );

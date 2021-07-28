@@ -18,7 +18,7 @@ function About() {
                         <h1>Join Our Newsletter</h1>
                         <h4>Sign up to all the latest offers, news and tips!</h4>
                         <form method="get">
-                            <input type="text" name="email" id="email" placeholder="Email address" />
+                            <input type="email" name="email" id="email" placeholder="Email address" />
                             <br></br>
                             <br></br>
                             <input className="signup" type="submit" value="Sign Me Up!" /> <input className="signup" type="reset" />
