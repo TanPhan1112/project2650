@@ -155,6 +155,7 @@ function Account() {
                             </div>
                         </form>
                     </main>
+                    
                     <footer className="footer mt-auto py-3 bg-light">
                         <div className="container">
                             <h3 className="text-center">Join Our Newsletter</h3>
