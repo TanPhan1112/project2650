@@ -138,7 +138,7 @@ function AdminProducts() {
                                     Brand is required.
                                 </div>
                             </div>
-               
+
                             <div className="col-lg-6 col-md-4 mb-3">
                                 <label htmlFor="quantity">Quantity</label>
                                 <input type="number" className="form-control" id="quantity"
