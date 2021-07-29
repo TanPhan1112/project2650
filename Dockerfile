@@ -8,10 +8,6 @@ WORKDIR /usr/src/app
 # Copy local code to the container image.
 COPY . ./
 
-# Copy application dependency manifests to the container image.
-# A wildcard is used to ensure both package.json AND package-lock.json are copied.
-# Copying this separately prevents re-running npm install on every code change.
-
 # Create and change to the app directory.
 WORKDIR frontend
 
@@ -21,6 +17,7 @@ RUN yarn install && yarn build
 # Create and change to the app directory.
 WORKDIR ../backend
 
+# Install production dependencies.
 RUN yarn install
 
 # Run the web service on container startup.
