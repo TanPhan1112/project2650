@@ -23,15 +23,15 @@ function Contact() {
                             <h3 className="text-center">Join Our Newsletter</h3>
                             <h6 className="text-center">Sign up to all the latest offers, news and tips!</h6>
 
-                            
-                                <form method="get">
-                                    <div className="row justify-content-center">
+
+                            <form method="get">
+                                <div className="row justify-content-center">
                                     <input type="email" className="col-4" name="email" id="email" placeholder="Email address" />
-                                    <input className="col-2 signup btn btn-primary" type="submit" value="Sign me up!" /> 
-                                    <input className="col-1 signup btn btn-primary" type="reset"/>
+                                    <input className="col-2 signup btn btn-primary" type="submit" value="Sign me up!" />
+                                    <input className="col-1 signup btn btn-primary" type="reset" />
                                 </div>
-                                </form>
-                            
+                            </form>
+
 
                             <figure className="text-center">
                                 <blockquote className="blockquote">

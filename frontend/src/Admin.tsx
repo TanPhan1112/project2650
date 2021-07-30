@@ -44,19 +44,19 @@ function AdminProducts() {
     const [errorMessage, setErrorMessage] = useState("Forms are required");
     const [errorClass, setErrorClass] = useState("form-control");
 
-    const handleDelete = (id: number) => {
-        productsService.remove(id);
+    const handleDelete = (_id: ReactNode) => {
+        productsService.remove(_id);
     }
 
     const productRows = allProducts.map((product: Product) =>
         <tr key={product.id}>
-            <td>{product.id}</td>
+            <td>{product._id}</td>
             <td>{product.name}</td>
             <td>{product.quantity}</td>
             <td>{product.price}</td>
             <td>{product.brand}</td>
             <td></td>
-            <td><button onClick={() => handleDelete(product.id)} type="button" className="btn btn-danger">Delete</button></td>
+            <td><button onClick={() => handleDelete(product._id)} type="button" className="btn btn-danger">Delete</button></td>
         </tr>
     );
 
@@ -67,7 +67,7 @@ function AdminProducts() {
 
         function removeProductX(oldProduct: Product) {
             const newProducts = allProducts.filter((iproduct, index, arr) => {
-                return iproduct.id !== oldProduct.id;
+                return iproduct._id !== oldProduct._id;
             });
             setAllProducts(newProducts);
         }
@@ -138,7 +138,7 @@ function AdminProducts() {
                                     Brand is required.
                                 </div>
                             </div>
-               
+
                             <div className="col-lg-6 col-md-4 mb-3">
                                 <label htmlFor="quantity">Quantity</label>
                                 <input type="number" className="form-control" id="quantity"
