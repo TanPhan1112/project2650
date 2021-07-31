@@ -5,31 +5,38 @@ function Home() {
         <html lang="en">
             <body>
                 <main className="container">
+                    <div className="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+                        <div className="container col-md-6">
+                            <h1 className="display-3">Hello, world!</h1>
+                            <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+                        </div>
+                    </div>
+
                     <hr></hr>
                     <div className="row mb-2">
                         <div className="col-md-6">
                             <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                                 <div className="col p-4 d-flex flex-column position-static">
-                                    <h3 className="mb-0">Featured post</h3>
-                                    <div className="mb-1 text-muted">Date</div>
-                                    <p className="card-text mb-auto">Add post content here</p>
+                                    <h3 className="mb-0">Dell is cancelling Alienware gaming PC shipments to several US states</h3>
+                                    <strong className="mt-1 d-inline-block mb-2 text-primary">Paul Lilly</strong>
+                                    <div className="mb-2 text-muted">July 27</div>
+                                    <a href="https://www.pcgamer.com/dell-is-cancelling-alienware-gaming-pc-shipments-to-several-us-states/" className="stretched-link"></a>
                                 </div>
                                 <div className="col-auto d-none d-lg-block">
-                                    <svg className="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
+                                    <img src="images/alienware.jpg" width="200" height="250" className="img-thumbnail" alt="alienware icon"></img>
                                 </div>
                             </div>
                         </div>
                         <div className="col-md-6">
                             <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                                 <div className="col p-4 d-flex flex-column position-static">
-                                    <h3 className="mb-0">Featured post</h3>
-                                    <div className="mb-1 text-muted">Date</div>
-                                    <p className="mb-auto">Add post content here.</p>
+                                    <h3 className="mb-0">Looks like your Steam Deck could arrive sooner rather than later</h3>
+                                    <strong className="mt-1 d-inline-block mb-2 text-primary">Dave James</strong>
+                                    <div className="mb-2 text-muted">July 22</div>
+                                    <a href="https://www.pcgamer.com/steam-deck-availability-sooner-than-expected/" className="stretched-link"></a>
                                 </div>
                                 <div className="col-auto d-none d-lg-block">
-                                    <svg className="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
+                                   <img src="images/steam-deck.jpg" width="200" height="250" className="img-thumbnail" alt="alienware icon"></img>
                                 </div>
                             </div>
                         </div>
@@ -39,26 +46,26 @@ function Home() {
                         <div className="col-md-6">
                             <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                                 <div className="col p-4 d-flex flex-column position-static">
-                                    <h3 className="mb-0">Featured post</h3>
-                                    <div className="mb-1 text-muted">Date</div>
-                                    <p className="card-text mb-auto">Add post content here</p>
+                                    <h3 className="mb-0">Next-gen AMD Ryzen CPUs may not feature extra cores, but there's far more to Zen 4</h3>
+                                    <strong className="mt-1 d-inline-block mb-2 text-primary">Jacob Ridley </strong>
+                                    <div className="mb-1 text-muted">July 14</div>
+                                    <a href="https://www.pcgamer.com/amd-zen-4-core-count/" className="stretched-link"></a>
                                 </div>
                                 <div className="col-auto d-none d-lg-block">
-                                    <svg className="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
+                                    <img src="images/amd.jpg" width="200" height="250" className="img-thumbnail" alt="alienware icon"></img>
                                 </div>
                             </div>
                         </div>
                         <div className="col-md-6">
                             <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                                 <div className="col p-4 d-flex flex-column position-static">
-                                    <h3 className="mb-0">Featured post</h3>
-                                    <div className="mb-1 text-muted">Date</div>
-                                    <p className="mb-auto">Add post content here.</p>
+                                    <h3 className="mb-0">I knew mechanical keyboards were getting cheaper, but $13? That's a steal</h3>
+                                    <strong className="mt-1 d-inline-block mb-2 text-primary">Paul Lilly</strong>
+                                    <div className="mb-1 text-muted">June 29</div>
+                                    <a href="https://www.pcgamer.com/i-knew-mechanical-keyboards-were-getting-cheaper-but-dollar13-thats-a-steal/" className="stretched-link"></a>
                                 </div>
                                 <div className="col-auto d-none d-lg-block">
-                                    <svg className="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
+                                    <img src="images/keyboard.jpg" width="200" height="250" className="img-thumbnail" alt="alienware icon"></img>
                                 </div>
                             </div>
                         </div>
