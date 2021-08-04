@@ -2,11 +2,13 @@ import React, { ReactNode } from 'react';
 import { useState, FormEvent } from 'react';
 import { Paginated } from '@feathersjs/feathers';
 import client from './feathers';
+import ReactGA from 'react-ga';
+import { createBrowserHistory } from 'history';
 // import './App.css';
 
 import {
-    BrowserRouter as Router,
-    //  Router,
+    // BrowserRouter as Router,
+    Router,
     Switch,
     Route,
     Link
@@ -31,6 +33,18 @@ interface Product {
 };
 
 const productsService = client.service('products');
+
+// initialize ReactGA
+const trackingId = "UA-201210237-1"; // Replace with your Google Analytics tracking ID
+ReactGA.initialize(trackingId);
+
+// set up history
+const history = createBrowserHistory();
+
+// Initialize google analytics page view tracking
+history.listen(location => {
+    ReactGA.pageview(location.pathname); // Record a pageview for the given page
+});
 
 function App() {
     const [search, setSearch] = useState("");
@@ -87,7 +101,7 @@ function App() {
 
     if (found) {
         return (
-            <Router>
+            <Router history={history}>
                 <head>
                     <title>PC Tech</title>
                     <meta charSet="utf-8" />
@@ -197,7 +211,7 @@ function App() {
     }
     else {
         return (
-            <Router>
+            <Router history={history}>
                 <head>
                     <title>PC Tech</title>
                     <meta charSet="utf-8" />
