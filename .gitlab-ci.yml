@@ -5,6 +5,9 @@ test:
         - cd frontend/
         - yarn install
         - yarn test
+        - cd ../backend/
+        - yarn install
+        - yarn test
 
 deploy:
     image: google/cloud-sdk:alpine
