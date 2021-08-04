@@ -35,7 +35,7 @@ interface Product {
 const productsService = client.service('products');
 
 // initialize ReactGA
-const trackingId = "UA-201210237-1"; // Replace with your Google Analytics tracking ID
+const trackingId = "UA-204034027-1"; // Replace with your Google Analytics tracking ID
 ReactGA.initialize(trackingId);
 
 // set up history
