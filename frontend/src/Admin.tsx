@@ -128,8 +128,6 @@ function AdminProducts() {
 
     return (
         <div>
-
-
             <button id="adminSection" type="button" className="btn btn-primary dropdown-toggle mt-3" data-bs-toggle="dropdown" aria-expanded="false">
                 Database Section
             </button>
@@ -138,7 +136,6 @@ function AdminProducts() {
                 <li><a className="dropdown-item" href="#">Orders</a></li>
                 <li><a className="dropdown-item" href="#">Customers</a></li>
             </ul>
-
 
             <div className="py-5 text-center">
                 <h2>Products
@@ -149,7 +146,6 @@ function AdminProducts() {
                         </svg>
                     </button>
                 </h2>
-
             </div>
 
             <div className="modal fade" id="addProductModal" tabIndex={-1} aria-labelledby="addProductModalLabel" aria-hidden="true">
@@ -213,7 +209,6 @@ function AdminProducts() {
                 </div>
             </div>
 
-
             <table className="table">
                 <thead>
                     <tr>
@@ -229,10 +224,8 @@ function AdminProducts() {
                     {productRows}
                 </tbody>
             </table>
-
         </div>
     );
 }
-
 
 export default AdminProducts;

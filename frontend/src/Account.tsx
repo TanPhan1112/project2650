@@ -134,69 +134,65 @@ function Account() {
     }
 
     return (
-        <html lang="en">
-            <body>
-                <div id="wrapper">
-                    <main>
-                        <h1>Log In</h1>
-                        <form onSubmit={handleSubmit2} noValidate>
-                            <label htmlFor="myEmail">E-mail:</label>
-                            <input type="text" name="myEmail" className="myEmail form-control" value={email1} required onChange={e => setEmail1(e.target.value)} />
-                            <div className="invalid-feedback">Email is required.</div>
-                            <label htmlFor="passWord">Password:</label>
-                            <input type="password" name="passWord" className="passWord form-control" value={password1} required onChange={e => setPassword1(e.target.value)} />
-                            <div className="invalid-feedback">Password is required.</div>
-                            <button className="mySubmit" type="submit">Log in</button>
-                        </form>
-                        <h1>Create an account</h1>
-                        <form onSubmit={e => onClick(e)} noValidate>
-                            <label htmlFor="firstName">First name:</label>
-                            <input type="text" name="firstName" className="firstName form-control" value={firstName} required onChange={e => setFirstName(e.target.value)} />
-                            <div className="invalid-feedback">First name is required.</div>
-                            <label htmlFor="lastName">Last name:</label>
-                            <input type="text" name="lastName" className="lastName form-control" value={lastName} required onChange={e => setLastName(e.target.value)} />
-                            <div className="invalid-feedback">Last name is required.</div>
-                            <label htmlFor="myEmail">E-mail:</label>
-                            <input type="email" name="myEmail" className="myEmail form-control" value={email} required onChange={e => setEmail(e.target.value)} />
-                            <div className="invalid-feedback">Email is required.</div>
-                            <label htmlFor="passWord">Password:</label>
-                            <input type="password" name="passWord" className="passWord form-control" value={password} required onChange={e => setPassword(e.target.value)} />
-                            <div className="invalid-feedback">Password is required.</div>
-                            <button className="btn btn-primary btn-lg btn-block g-recaptcha">Signup</button>
-                            <div className={errorClass}>
-                                {errorMessage}
-                            </div>
-                        </form>
-                    </main>
+        <div id="wrapper">
+            <main>
+                <h1>Log In</h1>
+                <form onSubmit={handleSubmit2} noValidate>
+                    <label htmlFor="myEmail">E-mail:</label>
+                    <input type="text" name="myEmail" className="myEmail form-control" value={email1} required onChange={e => setEmail1(e.target.value)} />
+                    <div className="invalid-feedback">Email is required.</div>
+                    <label htmlFor="passWord">Password:</label>
+                    <input type="password" name="passWord" className="passWord form-control" value={password1} required onChange={e => setPassword1(e.target.value)} />
+                    <div className="invalid-feedback">Password is required.</div>
+                    <button className="mySubmit" type="submit">Log in</button>
+                </form>
+                <h1>Create an account</h1>
+                <form onSubmit={e => onClick(e)} noValidate>
+                    <label htmlFor="firstName">First name:</label>
+                    <input type="text" name="firstName" className="firstName form-control" value={firstName} required onChange={e => setFirstName(e.target.value)} />
+                    <div className="invalid-feedback">First name is required.</div>
+                    <label htmlFor="lastName">Last name:</label>
+                    <input type="text" name="lastName" className="lastName form-control" value={lastName} required onChange={e => setLastName(e.target.value)} />
+                    <div className="invalid-feedback">Last name is required.</div>
+                    <label htmlFor="myEmail">E-mail:</label>
+                    <input type="email" name="myEmail" className="myEmail form-control" value={email} required onChange={e => setEmail(e.target.value)} />
+                    <div className="invalid-feedback">Email is required.</div>
+                    <label htmlFor="passWord">Password:</label>
+                    <input type="password" name="passWord" className="passWord form-control" value={password} required onChange={e => setPassword(e.target.value)} />
+                    <div className="invalid-feedback">Password is required.</div>
+                    <button className="btn btn-primary btn-lg btn-block g-recaptcha">Signup</button>
+                    <div className={errorClass}>
+                        {errorMessage}
+                    </div>
+                </form>
+            </main>
 
-                    <footer className="footer mt-auto py-3 bg-light">
-                        <div className="container">
-                            <h3 className="text-center">Join Our Newsletter</h3>
-                            <h6 className="text-center">Sign up to all the latest offers, news and tips!</h6>
+            <footer className="footer mt-auto py-3 bg-light">
+                <div className="container">
+                    <h3 className="text-center">Join Our Newsletter</h3>
+                    <h6 className="text-center">Sign up to all the latest offers, news and tips!</h6>
 
 
-                            <form method="get">
-                                <div className="row justify-content-center">
-                                    <input type="email" className="col-4" name="email" id="email" placeholder="Email address" />
-                                    <input className="col-2 signup btn btn-primary" type="submit" value="Sign me up!" />
-                                    <input className="col-1 signup btn btn-primary" type="reset" />
-                                </div>
-                            </form>
-
-
-                            <figure className="text-center">
-                                <blockquote className="blockquote">
-                                    <p>Copyright &copy; 2021 pctech.com</p>
-                                </blockquote>
-                                <figcaption className="blockquote-footer">
-                                    Created by <cite title="authors">Phan, Duc Minh Tan and Nguyen, Hoang Nam</cite>
-                                </figcaption>
-                            </figure>
+                    <form method="get">
+                        <div className="row justify-content-center">
+                            <input type="email" className="col-4" name="email" id="email" placeholder="Email address" />
+                            <input className="col-2 signup btn btn-primary" type="submit" value="Sign me up!" />
+                            <input className="col-1 signup btn btn-primary" type="reset" />
                         </div>
-                    </footer>
+                    </form>
+
+
+                    <figure className="text-center">
+                        <blockquote className="blockquote">
+                            <p>Copyright &copy; 2021 pctech.com</p>
+                        </blockquote>
+                        <figcaption className="blockquote-footer">
+                            Created by <cite title="authors">Phan, Duc Minh Tan and Nguyen, Hoang Nam</cite>
+                        </figcaption>
+                    </figure>
                 </div>
-            </body>
-        </html>
+            </footer>
+        </div>
     );
 }
 

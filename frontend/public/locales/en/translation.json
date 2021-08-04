@@ -1,0 +1,14 @@
+{
+  "nav1": "Home",
+  "nav2": "About",
+  "nav3": "Products",
+  "nav4": "Contact Us",
+  "nav5": "Account",
+  "search": "Search..",
+  "language": "Language",
+
+  "des": {
+    "part1": "Um loszulegen, ändere <1>src/App.tsx</1> speicheren und neuladen.",
+    "part2": "Ändere die Sprachen zwischen deutsch und englisch mit Hilfe der beiden Schalter."
+  }
+}
