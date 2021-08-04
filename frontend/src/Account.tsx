@@ -100,6 +100,10 @@ function Account() {
                 .then((signup: Signup) => {
                     setEmail1("");
                     setPassword1("");
+                    ReactGA.event({
+                        category: "Guest",
+                        action: "Login",
+                    });
                     if (signup.data[0].email !== undefined) {
                         if (signup.data[0].email === "pctechAdmin@pctech.com") {
                             setErrorMessage("Admin found! Redirecting to admin page ...");

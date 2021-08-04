@@ -1,6 +1,7 @@
 import React, { useState, useEffect, ReactNode } from 'react';
 import { Paginated } from '@feathersjs/feathers';
 import client from './feathers';
+import ReactGA from 'react-ga';
 
 interface Product {
     _id: ReactNode;
@@ -30,7 +31,13 @@ function Products() {
     useEffect(() => {
         productService
             .find()
-            .then((productPage: Paginated<Product>) => setAllProducts(productPage.data))
+            .then((productPage: Paginated<Product>) => {
+                setAllProducts(productPage.data);
+                ReactGA.event({
+                    category: "Guest",
+                    action: "Find",
+                });
+            })
             .catch((err: any) => {
                 console.log("problem finding products.");
             });

@@ -84,7 +84,13 @@ function AdminProducts() {
     useEffect(() => {
         productsService
             .find()
-            .then((productPage: Paginated<Product>) => setAllProducts(productPage.data))
+            .then((productPage: Paginated<Product>) => {
+                setAllProducts(productPage.data);
+                ReactGA.event({
+                    category: "Guest",
+                    action: "Find",
+                });
+            })
             .catch((err: any) => {
                 console.log("problem finding products.");
             });

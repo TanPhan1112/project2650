@@ -78,6 +78,10 @@ function App() {
                 .then((productPage: Paginated<Product>) => {
                     setSearch("");
                     setAllProducts(productPage.data);
+                    ReactGA.event({
+                        category: "Guest",
+                        action: "Search",
+                    });
                     if (productPage.data[0].name !== undefined) {
                         setFound(true);
                         setAllProducts(productPage.data);
