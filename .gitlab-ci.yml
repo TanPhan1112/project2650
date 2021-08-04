@@ -1,3 +1,10 @@
+test:
+    image: node:12-alpine
+    stage: test
+    script:
+        - yarn install
+        - yarn test
+
 default:
     image: google/cloud-sdk:alpine
     before_script:
