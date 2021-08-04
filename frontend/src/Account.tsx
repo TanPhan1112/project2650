@@ -107,7 +107,7 @@ function Account() {
                             history.push("/Admin");
                             ReactGA.event({
                                 category: "Guest",
-                                action: "Add",
+                                action: "Login",
                             });
                         } else {
                             setErrorMessage("Account found! Welcome!!!");
