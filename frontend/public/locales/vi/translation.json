@@ -7,8 +7,32 @@
   "search": "Tìm kiếm",
   "language": "Ngôn ngữ",
 
-  "des": {
-    "part1": "Um loszulegen, ändere <1>src/App.tsx</1> speicheren und neuladen.",
-    "part2": "Ändere die Sprachen zwischen deutsch und englisch mit Hilfe der beiden Schalter."
+  "post": {
+    "content1": "Dell đang hủy các lô hàng máy tính Alienware đến một số tiểu bang của Hoa Kì",
+    "date1": "27 tháng 7",
+        
+    "content2": "Có vẻ như Steam Deck của bạn có thể đến sớm hơn là dự kiến",
+    "date2": "22 tháng 7",
+
+    "content3": "CPU AMD Ryzen thế hệ tiếp theo có thể không có thêm lõi, nhưng Zen 4 sẽ có nhiều tính năng nổi trội",
+    "date3": "14 tháng 7",
+
+    "content4": "Tôi biết bàn phím cơ ngày càng rẻ hơn, nhưng 13 đô la? Đó là ăn cắp",
+    "date4": "29 tháng 6"
+  },
+
+  "home": {
+    "title": "Chào thế giới!",
+    "description": "Đây là một mẫu cho một trang web tiếp thị hoặc thông tin đơn giản. Nó bao gồm một chú thích lớn được gọi là jumbotron và ba phần nội dung hỗ trợ. Sử dụng nó như một điểm khởi đầu để tạo ra một cái gì đó độc đáo hơn."
+  },
+
+   "footer": {
+    "title": "Tham gia bản tin của chúng tôi",
+    "description": "Đăng ký để nhận tất cả các ưu đãi, tin tức và mẹo mới nhất!",
+    "email": "Địa chỉ email",
+    "signup": "Đăng kí ngay!",
+    "reset": "Xóa",
+    "copyright": "Bản quyền",
+    "authors": "Lập trình bởi"
   }
 }

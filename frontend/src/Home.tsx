@@ -27,8 +27,8 @@ function Home() {
 
             <div className="jumbotron p-3 p-md-5 text-white rounded bg-dark">
                 <div className="container col-md-6">
-                    <h1 className="display-3">Hello, world!</h1>
-                    <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+                    <h1 className="display-3">{t('home.title')}</h1>
+                    <p>{t('home.description')}</p>
                 </div>
             </div>
 
@@ -37,9 +37,9 @@ function Home() {
                 <div className="col-md-6">
                     <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                         <div className="col p-4 d-flex flex-column position-static">
-                            <h3 className="mb-0">Dell is cancelling Alienware gaming PC shipments to several US states</h3>
+                            <h3 className="mb-0">{t('post.content1')}</h3>
                             <strong className="mt-1 d-inline-block mb-2 text-primary">Paul Lilly</strong>
-                            <div className="mb-2 text-muted">July 27</div>
+                            <div className="mb-2 text-muted">{t('post.date1')}</div>
                             <a href="https://www.pcgamer.com/dell-is-cancelling-alienware-gaming-pc-shipments-to-several-us-states/" className="stretched-link"></a>
                         </div>
                         <div className="col-auto d-none d-lg-block">
@@ -50,9 +50,9 @@ function Home() {
                 <div className="col-md-6">
                     <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                         <div className="col p-4 d-flex flex-column position-static">
-                            <h3 className="mb-0">Looks like your Steam Deck could arrive sooner rather than later</h3>
+                            <h3 className="mb-0">{t('post.content2')}</h3>
                             <strong className="mt-1 d-inline-block mb-2 text-primary">Dave James</strong>
-                            <div className="mb-2 text-muted">July 22</div>
+                            <div className="mb-2 text-muted">{t('post.date2')}</div>
                             <a href="https://www.pcgamer.com/steam-deck-availability-sooner-than-expected/" className="stretched-link"></a>
                         </div>
                         <div className="col-auto d-none d-lg-block">
@@ -66,9 +66,9 @@ function Home() {
                 <div className="col-md-6">
                     <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                         <div className="col p-4 d-flex flex-column position-static">
-                            <h3 className="mb-0">Next-gen AMD Ryzen CPUs may not feature extra cores, but there's far more to Zen 4</h3>
+                            <h3 className="mb-0">{t('post.content3')}</h3>
                             <strong className="mt-1 d-inline-block mb-2 text-primary">Jacob Ridley </strong>
-                            <div className="mb-1 text-muted">July 14</div>
+                            <div className="mb-1 text-muted">{t('post.date3')}</div>
                             <a href="https://www.pcgamer.com/amd-zen-4-core-count/" className="stretched-link"></a>
                         </div>
                         <div className="col-auto d-none d-lg-block">
@@ -79,9 +79,9 @@ function Home() {
                 <div className="col-md-6">
                     <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                         <div className="col p-4 d-flex flex-column position-static">
-                            <h3 className="mb-0">I knew mechanical keyboards were getting cheaper, but $13? That's a steal</h3>
+                            <h3 className="mb-0">{t('post.content4')}</h3>
                             <strong className="mt-1 d-inline-block mb-2 text-primary">Paul Lilly</strong>
-                            <div className="mb-1 text-muted">June 29</div>
+                            <div className="mb-1 text-muted">{t('post.date4')}</div>
                             <a href="https://www.pcgamer.com/i-knew-mechanical-keyboards-were-getting-cheaper-but-dollar13-thats-a-steal/" className="stretched-link"></a>
                         </div>
                         <div className="col-auto d-none d-lg-block">
@@ -110,25 +110,25 @@ function Home() {
 
             <footer className="footer mt-auto py-3 bg-light">
                 <div className="container">
-                    <h3 className="text-center">Join Our Newsletter</h3>
-                    <h6 className="text-center">Sign up to all the latest offers, news and tips!</h6>
+                    <h3 className="text-center">{t('footer.title')}</h3>
+                    <h6 className="text-center">{t('footer.description')}</h6>
 
 
                     <form method="get">
                         <div className="row justify-content-center">
-                            <input type="email" className="col-4" name="email" id="email" placeholder="Email address" />
-                            <input className="col-2 signup btn btn-primary" type="submit" value="Sign me up!" />
-                            <input className="col-1 signup btn btn-primary" type="reset" />
+                            <input type="email" className="col-4" name="email" id="email" placeholder={t('footer.email')} />
+                            <input className="col-2 signup btn btn-primary" type="submit" placeholder={t('footer.signup')} />
+                            <input className="col-1 signup btn btn-primary" type="reset" placeholder={t('footer.reset')}/>
                         </div>
                     </form>
 
 
                     <figure className="text-center">
                         <blockquote className="blockquote">
-                            <p>Copyright &copy; 2021 pctech.com</p>
+                            <p>{t('footer.copyright')} &copy; 2021 pctech.com</p>
                         </blockquote>
                         <figcaption className="blockquote-footer">
-                            Created by <cite title="authors">Phan, Duc Minh Tan and Nguyen, Hoang Nam</cite>
+                            {t('footer.authors')} <cite title="authors">Phan, Duc Minh Tan and Nguyen, Hoang Nam</cite>
                         </figcaption>
                     </figure>
                 </div>

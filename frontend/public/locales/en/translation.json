@@ -7,8 +7,32 @@
   "search": "Search..",
   "language": "Language",
 
-  "des": {
-    "part1": "Um loszulegen, ändere <1>src/App.tsx</1> speicheren und neuladen.",
-    "part2": "Ändere die Sprachen zwischen deutsch und englisch mit Hilfe der beiden Schalter."
+  "post": {
+    "content1": "Dell is cancelling Alienware gaming PC shipments to several US states",
+    "date1": "July 27",
+
+    "content2": "Looks like your Steam Deck could arrive sooner rather than later",
+    "date2": "July 22",
+    
+    "content3": "Looks like your Steam Deck could arrive sooner rather than later",
+    "date3": "July 14",
+
+    "content4": "I knew mechanical keyboards were getting cheaper, but $13? That's a steal",
+    "date4": "June 29"
+  },
+
+  "home": {
+    "title": "Hello world!",
+    "description": "This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique."
+  },
+
+  "footer": {
+    "title": "Join Our Newsletter",
+    "description": "Sign up to all the latest offers, news and tips!",
+    "email": "Email address",
+    "signup": "Sign me up!",
+    "reset": "Reset",
+    "copyright": "Copyright",
+    "authors": "Created by"
   }
 }
