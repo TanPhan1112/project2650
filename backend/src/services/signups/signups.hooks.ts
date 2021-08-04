@@ -1,10 +1,11 @@
 
+import processSignup from '../../hooks/process-signup';
 export default {
   before: {
     all: [],
     find: [],
     get: [],
-    create: [],
+    create: [processSignup()],
     update: [],
     patch: [],
     remove: []
