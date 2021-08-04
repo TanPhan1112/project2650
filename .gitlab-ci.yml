@@ -2,6 +2,7 @@ test:
     image: node:12-alpine
     stage: test
     script:
+        - cd frontend/
         - yarn install
         - yarn test
 
