@@ -1,0 +1,14 @@
+{
+  "nav1": "Trang chủ",
+  "nav2": "Giới thiệu",
+  "nav3": "Sản phẩm",
+  "nav4": "Liên hệ",
+  "nav5": "Tài khoản",
+  "search": "Tìm kiếm",
+  "language": "Ngôn ngữ",
+
+  "des": {
+    "part1": "Um loszulegen, ändere <1>src/App.tsx</1> speicheren und neuladen.",
+    "part2": "Ändere die Sprachen zwischen deutsch und englisch mit Hilfe der beiden Schalter."
+  }
+}
