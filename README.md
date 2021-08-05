@@ -16,10 +16,12 @@ For development, you will only need Node.js and a node global package, Yarn, ins
     $ yarn install
 
 ## Build the frontend
-
+    
+    $ cd frontend
     $ yarn build
 
 ## Running the project
-
+    
+    $cd backend
     $ yarn start
  
