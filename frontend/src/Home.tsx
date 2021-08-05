@@ -118,7 +118,7 @@ function Home() {
                         <div className="row justify-content-center">
                             <input type="email" className="col-4" name="email" id="email" placeholder={t('footer.email')} />
                             <input className="col-2 signup btn btn-primary" type="submit" placeholder={t('footer.signup')} />
-                            <input className="col-1 signup btn btn-primary" type="reset" placeholder={t('footer.reset')}/>
+                            <input className="col-1 signup btn btn-danger" type="reset" placeholder={t('footer.reset')}/>
                         </div>
                     </form>
 

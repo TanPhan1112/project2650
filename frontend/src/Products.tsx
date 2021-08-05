@@ -2,6 +2,8 @@ import React, { useState, useEffect, ReactNode } from 'react';
 import { Paginated } from '@feathersjs/feathers';
 import client from './feathers';
 import ReactGA from 'react-ga';
+import { Link } from "react-router-dom";
+import { useTranslation, withTranslation, WithTranslation, Trans } from 'react-i18next';
 
 interface Product {
     _id: ReactNode;
@@ -16,6 +18,11 @@ interface Product {
 const productService = client.service('products');
 
 function Products() {
+    const { t, i18n } = useTranslation();
+
+    const changeLanguage = (lng: string) => {
+        i18n.changeLanguage(lng);
+    };
     const [allProducts, setAllProducts] = useState<Array<Product>>([]);
 
     const productRows = allProducts.map((product: Product) =>
@@ -53,13 +60,29 @@ function Products() {
 
     return (
         <body>
-            <h2>Products</h2>
-            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-cart4 me-2" viewBox="0 0 16 16">
-                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
-                </svg>
-                Cart
-            </button>
+            <div className="px-3 py-2 mb-3">
+                <div className="container d-grid gap-2 d-md-flex justify-content-end mt-3">
+                    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-cart4 me-2" viewBox="0 0 16 16">
+                            <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>
+                        {t('products.cart')}
+                    </button>
+
+                    <div className="dropdown">
+                        <a className="btn btn-primary dropdown-toggle me-md-2" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            {t('language')}
+                        </a>
+
+                        <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><Link className="dropdown-item" onClick={() => changeLanguage('en')} to="/products-list/en">English</Link></li>
+                            <li><Link className="dropdown-item" onClick={() => changeLanguage('vi')} to="/products-list/vi">Vietnamese</Link></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2 className="text-center mt-3 mb-4">{t('products.title')}</h2>
 
             <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-lg modal-dialog-centered">
@@ -73,12 +96,12 @@ function Products() {
                             <table className="table table-image">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Brand</th>
-                                        <th scope="col">Price</th>
-                                        <th scope="col">Qty</th>
-                                        <th scope="col">Total</th>
-                                        <th scope="col">Actions</th>
+                                        <th scope="col">{t('products.table.id')}</th>
+                                        <th scope="col">{t('products.table.name')}</th>
+                                        <th scope="col">{t('products.table.qty')}</th>
+                                        <th scope="col">{t('products.table.price')}</th>
+                                        <th scope="col">{t('products.table.brand')}</th>
+                                        <th scope="col"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -112,11 +135,11 @@ function Products() {
             <table className="table">
                 <thead>
                     <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Brand</th>
+                        <th scope="col">{t('products.table.id')}</th>
+                        <th scope="col">{t('products.table.name')}</th>
+                        <th scope="col">{t('products.table.qty')}</th>
+                        <th scope="col">{t('products.table.price')}</th>
+                        <th scope="col">{t('products.table.brand')}</th>
                         <th></th>
                     </tr>
                 </thead>

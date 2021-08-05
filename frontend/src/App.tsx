@@ -191,11 +191,11 @@ function Main() {
                 <table className="table">
                     <thead>
                         <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">quantity</th>
-                            <th scope="col">price</th>
-                            <th scope="col">brand</th>
+                            <th scope="col">{t('products.table.id')}</th>
+                            <th scope="col">{t('products.table.name')}</th>
+                            <th scope="col">{t('products.table.qty')}</th>
+                            <th scope="col">{t('products.table.price')}</th>
+                            <th scope="col">{t('products.table.brand')}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -212,10 +212,16 @@ function Main() {
                     <Route path="/About">
                         <About />
                     </Route>
-                    <Route path="/Contact">
+                    <Route path="/Contact/en">
                         <Contact />
                     </Route>
-                    <Route path="/products-list">
+                    <Route path="/Contact/vi">
+                        <Contact />
+                    </Route>
+                    <Route path="/products-list/en">
+                        <Products />
+                    </Route>
+                    <Route path="/products-list/vi">
                         <Products />
                     </Route>
                     <Route path="/en">
@@ -299,17 +305,52 @@ function Main() {
                     <Route path="/Admin">
                         <Admin />
                     </Route>
+
+                    <Route path="/Account/en">
+                        <Account />
+                    </Route>
+                    <Route path="/Account/vi">
+                        <Account />
+                    </Route>
                     <Route path="/Account">
                         <Account />
+                    </Route>
+
+                    <Route path="/About/en">
+                        <About />
+                    </Route>
+                    <Route path="/About/vi">
+                        <About />
                     </Route>
                     <Route path="/About">
                         <About />
                     </Route>
+
+                    <Route path="/Contact/en">
+                        <Contact />
+                    </Route>
+                    <Route path="/Contact/vi">
+                        <Contact />
+                    </Route>
                     <Route path="/Contact">
                         <Contact />
                     </Route>
+
+                    <Route path="/products-list/en">
+                        <Products />
+                    </Route>
+                    <Route path="/products-list/vi">
+                        <Products />
+                    </Route>
                     <Route path="/products-list">
                         <Products />
+                    </Route>
+                    
+                    <Route path="/en">
+                        <Home />
+                    </Route>
+                    <Route path="/vi">
+                        <Home />
                     </Route>
                     <Route path="/">
                         <Home />

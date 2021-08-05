@@ -4,6 +4,7 @@
   "nav3": "Products",
   "nav4": "Contact Us",
   "nav5": "Account",
+
   "search": "Search..",
   "language": "Language",
 
@@ -25,6 +26,51 @@
     "title": "Hello world!",
     "description": "This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique."
   },
+
+  "about":{
+      "title": "Welcome you to visit our website!",
+      "description": "Contact the developers:"
+  },
+
+  "products":{
+    "title": "Products",
+    "table": {
+        "id": "ID",
+        "name": "Name",
+        "qty": "Quantity",
+        "price": "Price",
+        "brand": "Brand"
+    },
+    "cart": "Cart"
+  },
+
+  "contact":{
+    "title": {
+        "form": "Contact form",
+        "info": "Contact info"
+    },
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Submit",
+    "nameHolder": "Enter name",
+    "emailHolder": "Enter email"
+   },
+
+   "account":{
+        "title": "Log in",
+        "title2": "Sign up",
+        "email": "Email",
+        "pw": "Password",
+        "fn": "First name",
+        "ln": "Last name",
+        "invalid": {
+            "ln": "Last name is required",
+            "fn": "First name is required",
+            "email": "Email is required",
+            "pw": "Password is required"
+        }
+   },
 
   "footer": {
     "title": "Join Our Newsletter",
