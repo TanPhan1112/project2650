@@ -22,6 +22,6 @@ For development, you will only need Node.js and a node global package, Yarn, ins
 
 ## Running the project
     
-    $cd backend
+    $ cd backend
     $ yarn start
  
