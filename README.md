@@ -21,6 +21,5 @@ For development, you will only need Node.js and a node global package, Yarn, ins
 
 ## Running the project
 
-    * Don't forget your databse connection string
     $ yarn start
  
