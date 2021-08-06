@@ -12,7 +12,7 @@ function Footer() {
                     <h6 className="text-center">{t('footer.footerHeading')}</h6>
                     <div className="d-flex justify-content-center">
                         <button type="button" className="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#liveChat">
-                            Chat support
+                            {t('footer.chatBtn')}
                         </button>
                     </div>
 
@@ -23,7 +23,7 @@ function Footer() {
                             <button className="col-1 signup btn btn-primary" type="reset">{t('footer.reset')}</button>
                         </div>
                     </form>
-                    
+
                     <figure className="text-center">
                         <blockquote className="blockquote">
                             <p>{t('footer.copyright')} &copy; 2021 pctech.com</p>
@@ -38,7 +38,7 @@ function Footer() {
                     <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h5 className="modal-title" id="liveChatLabel">Live chat</h5>
+                                <h5 className="modal-title" id="liveChatLabel">{t('footer.liveChat')}</h5>
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div className="modal-body">
@@ -53,8 +53,8 @@ function Footer() {
                                                     </svg>
                                                 </div>
                                                 <div className="col">
-                                                    Welcome to our chat support, leave a message and we will be with you soon!
-                                    </div>
+                                                    {t('footer.welcomeMes')}
+                                                </div>
                                             </div>
                                         </li>
                                     </ul>
@@ -63,7 +63,7 @@ function Footer() {
                             <div className="modal-footer">
                                 <div className="input-group mb-3">
                                     <input type="text" className="form-control" placeholder="Enter your message.." aria-label="messageInput" aria-describedby="button-addon2" />
-                                    <button type="submit" className="btn btn-outline-primary" id="button-addon2">Send</button>
+                                    <button type="submit" className="btn btn-outline-primary" id="button-addon2">{t('footer.send')}</button>
                                 </div>
                             </div>
                         </div>
