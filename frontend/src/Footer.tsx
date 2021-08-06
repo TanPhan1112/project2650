@@ -62,7 +62,7 @@ function Footer() {
                             </div>
                             <div className="modal-footer">
                                 <div className="input-group mb-3">
-                                    <input type="text" className="form-control" placeholder="Enter your message.." aria-label="messageInput" aria-describedby="button-addon2" />
+                                    <input type="text" className="form-control" placeholder={t('footer.msgEnter')} aria-label="messageInput" aria-describedby="button-addon2" />
                                     <button type="submit" className="btn btn-outline-primary" id="button-addon2">{t('footer.send')}</button>
                                 </div>
                             </div>
