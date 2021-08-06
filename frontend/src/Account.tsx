@@ -46,6 +46,12 @@ function Account() {
     const [errorClass, setErrorClass] = useState("form-control");
     const history = useHistory();
 
+    const { t, i18n } = useTranslation();
+
+    const changeLanguage = (lng: string) => {
+        i18n.changeLanguage(lng);
+    };
+
     useEffect(() => {
         function addAccountX(newAccount: Signup) {
             setAllAccounts([...allAccounts, newAccount]);
