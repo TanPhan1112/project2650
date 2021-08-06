@@ -1,84 +1,102 @@
 {
-  "nav1": "Home",
-  "nav2": "About",
-  "nav3": "Products",
-  "nav4": "Contact Us",
-  "nav5": "Account",
-
-  "search": "Search..",
-  "language": "Language",
-
-  "post": {
-    "content1": "Dell is cancelling Alienware gaming PC shipments to several US states",
-    "date1": "July 27",
-
-    "content2": "Looks like your Steam Deck could arrive sooner rather than later",
-    "date2": "July 22",
-    
-    "content3": "Looks like your Steam Deck could arrive sooner rather than later",
-    "date3": "July 14",
-
-    "content4": "I knew mechanical keyboards were getting cheaper, but $13? That's a steal",
-    "date4": "June 29"
-  },
-
-  "home": {
-    "title": "Hello world!",
-    "description": "This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique."
-  },
-
-  "about":{
-      "title": "Welcome you to visit our website!",
-      "description": "Contact the developers:"
-  },
-
-  "products":{
-    "title": "Products",
-    "table": {
-        "id": "ID",
+    "header": {
+        "language": "Language",
+        "english": "English",
+        "vietnamese": "Vietnamese",
+        "search": "Search",
+        "searchResult": "Searching result(s) ...",
+        "error": "Product not found!",
+        "errorFound": "Product found!",
+        "home": "Home",
+        "about": "About",
+        "products": "Products",
+        "contact": "Contact",
+        "login": "Log in",
+        "productName": "Product name",
+        "brand": "Brand",
+        "quantity": "Quantity",
+        "price": "Price"
+    },
+    "home": {
+        "h1": "Hello, world!",
+        "p": "This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.",
+        "h3_1": "Dell is cancelling Alienware gaming PC shipments to several US states",
+        "h3_2": "Looks like your Steam Deck could arrive sooner rather than later",
+        "h3_3": "Next-gen AMD Ryzen CPUs may not feature extra cores, but there's far more to Zen 4",
+        "h3_4": "I knew mechanical keyboards were getting cheaper, but $13? That's a steal"
+    },
+    "contact": {
+        "title": "Contact form",
         "name": "Name",
-        "qty": "Quantity",
+        "email": "Email address",
+        "message": "Message",
+        "submit": "Submit",
+        "info": "Contact info",
+        "address": "Address",
+        "phone": "phone"
+    },
+    "products": {
+        "title": "Products",
+        "shoppingCart": "Your shopping cart",
+        "checkout": "Check-out",
+        "close": "Close",
+        "remove": "Remove",
+        "productName": "Product name",
+        "brand": "Brand",
+        "quantity": "Quantity",
         "price": "Price",
-        "brand": "Brand"
+        "total": "Total",
+        "delete": "Delete"
     },
-    "cart": "Cart"
-  },
-
-  "contact":{
-    "title": {
-        "form": "Contact form",
-        "info": "Contact info"
+    "admin": {
+        "selectBtn": "Database Section",
+        "item1": "Products",
+        "item2": "Orders",
+        "item3": "Customers",
+        "products": "Products",
+        "title": "Add products",
+        "productName": "Product name",
+        "prRequired": "Product name is required.",
+        "brand": "Brand",
+        "brandRequired": "Brand is required.",
+        "quantity": "Quantity",
+        "qtyRequired": "Product quantity is required.",
+        "price": "Price",
+        "priceRequired": "Product price is required.",
+        "addBtn": "Add product",
+        "formRequired": "Forms are required.",
+        "error": "Problem finding products!",
+        "delete": "Delete"
     },
-    "name": "Name",
-    "email": "Email",
-    "message": "Message",
-    "submit": "Submit",
-    "nameHolder": "Enter name",
-    "emailHolder": "Enter email"
-   },
-
-   "account":{
-        "title": "Log in",
-        "title2": "Sign up",
-        "email": "Email",
-        "pw": "Password",
-        "fn": "First name",
-        "ln": "Last name",
-        "invalid": {
-            "ln": "Last name is required",
-            "fn": "First name is required",
-            "email": "Email is required",
-            "pw": "Password is required"
-        }
-   },
-
-  "footer": {
-    "title": "Join Our Newsletter",
-    "description": "Sign up to all the latest offers, news and tips!",
-    "email": "Email address",
-    "signup": "Sign me up!",
-    "reset": "Reset",
-    "copyright": "Copyright",
-    "authors": "Created by"
-  }
+    "account": {
+        "title1": "Log in",
+        "loginEmail": "E-mail:",
+        "emailRequired": "Email is required.",
+        "password": "Password:",
+        "pwdRequired": "Password is required.",
+        "loginBtn": "Log in",
+        "title2": "Create an account",
+        "firstName": "First name:",
+        "fnRequired": "First name is required.",
+        "lastName": "Last name:",
+        "lnRequired": "Last name is required.",
+        "signUp": "Sign up",
+        "formRequired": "Forms are required.",
+        "success": "Successfully created account",
+        "error": "Account not found! or incorrect email/password!",
+        "successLogin": "Account found! Welcome!!!"
+    },
+    "about": {
+        "h2": "Welcome you to visit our website!",
+        "contact": "Contact developers:"
+    },
+    "footer": {
+        "footerTitle": "Join Our Newsletter",
+        "footerHeading": "Sign up to all the latest news!",
+        "email": "Email address",
+        "signUp": "Sign Me Up!",
+        "reset": "Reset",
+        "copyright": "Copyright",
+        "createdBy": "Created by"
+    }
 }
