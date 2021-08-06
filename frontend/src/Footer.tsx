@@ -33,7 +33,6 @@ function Footer() {
                         </figcaption>
                     </figure>
                 </div>
-
                 <div className="modal fade" id="liveChat" tabIndex={-1} aria-labelledby="liveChatLabel" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
                         <div className="modal-content">

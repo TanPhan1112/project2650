@@ -138,9 +138,9 @@ function AdminProducts() {
                 </button>
 
                 <ul className="dropdown-menu" aria-labelledby="adminSection">
-                    <li><a className="dropdown-item" href="#">{t('admin.item1')}</a></li>
-                    <li><a className="dropdown-item" href="#">{t('admin.item2')}</a></li>
-                    <li><a className="dropdown-item" href="#">{t('admin.item3')}</a></li>
+                    <li><a className="dropdown-item" href="#/">{t('admin.item1')}</a></li>
+                    <li><a className="dropdown-item" href="#/">{t('admin.item2')}</a></li>
+                    <li><a className="dropdown-item" href="#/">{t('admin.item3')}</a></li>
                 </ul>
 
                 <div className="py-5 text-center">

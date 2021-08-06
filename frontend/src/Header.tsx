@@ -30,7 +30,7 @@ function Translate() {
         <div className="px-3 py-2 mb-3">
             <div className="container d-flex flex-wrap justify-content-end">
                 <div className="dropdown">
-                    <a className="btn btn-primary dropdown-toggle me-md-2" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a className="btn btn-primary dropdown-toggle me-md-2" href="#/" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                         {t('header.language')}
                     </a>
 
