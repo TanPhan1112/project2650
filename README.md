@@ -44,4 +44,10 @@ For development, you will only need Node.js and a node global package, Yarn, ins
     
     $ cd backend
     $ yarn start
+
+## Login admin interface credential
+
+    Email: "pctechAdmin@pctech.com"
+    Password: "Admin"
+
  
