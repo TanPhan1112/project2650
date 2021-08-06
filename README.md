@@ -7,6 +7,7 @@ This is an online shopping application project made for CPSC 2650 course in Lang
 For development, you will only need Node.js and a node global package, Yarn, installed in your environement.
 
 ### Node installation
+
 - #### On Windows
 
   Go to Node.js website (https://nodejs.org/) and download recommended version.
@@ -14,16 +15,15 @@ For development, you will only need Node.js and a node global package, Yarn, ins
 
 - #### On Ubuntu
 
-      $ sudo apt install nodejs
-      $ sudo apt install npm
+    $ sudo apt install nodejs
+    $ sudo apt install npm
 
 - #### Other Operating Systems
   You can find more information on Node.js website (https://nodejs.org/) and NPM website (https://npmjs.org/).
 
 ### Yarn installation
-  After installing node, this project will need yarn too, so just run the following command.
 
-      $ npm install -g yarn
+    $ npm install -g yarn
 
 
 ## Install
