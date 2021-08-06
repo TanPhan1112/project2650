@@ -2,6 +2,8 @@ import React, { useState, useEffect, FormEvent, ReactNode } from 'react';
 import { Paginated } from '@feathersjs/feathers';
 import client from './feathers';
 import ReactGA from 'react-ga';
+import Header from './Header';
+import { useTranslation } from 'react-i18next';
 
 interface Product {
     _id: ReactNode,
@@ -37,12 +39,13 @@ productsService.on('removed', (oldProduct: Product) => {
 function AdminProducts() {
     // you'll have to add some additional state varialbes here
     // for each of the form fields
+    const { t } = useTranslation();
     const [name, setName] = useState("");
     const [quantity, setQuantity] = useState(0);
     const [price, setPrice] = useState(0);
     const [brand, setBrand] = useState("");
     const [allProducts, setAllProducts] = useState<Array<Product>>([]);
-    const [errorMessage, setErrorMessage] = useState("Forms are required");
+    const [errorMessage, setErrorMessage] = useState(t('admin.formRequired'));
     const [errorClass, setErrorClass] = useState("form-control");
 
     const handleDelete = (_id: ReactNode) => {
@@ -92,9 +95,9 @@ function AdminProducts() {
                 });
             })
             .catch((err: any) => {
-                console.log("problem finding products.");
+                console.log(t('admin.error'));
             });
-    }, []);
+    });
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
@@ -109,7 +112,7 @@ function AdminProducts() {
                     setQuantity(0);
                     setPrice(0);
                     setBrand("");
-                    setErrorMessage("Forms are required");
+                    setErrorMessage(t('admin.formRequired'));
                     setErrorClass("form-control");
                     ReactGA.event({
                         category: "Admin",
@@ -128,102 +131,106 @@ function AdminProducts() {
 
     return (
         <div>
-            <button id="adminSection" type="button" className="btn btn-primary dropdown-toggle mt-3" data-bs-toggle="dropdown" aria-expanded="false">
-                Database Section
-            </button>
-            <ul className="dropdown-menu" aria-labelledby="adminSection">
-                <li><a className="dropdown-item" href="#">Products</a></li>
-                <li><a className="dropdown-item" href="#">Orders</a></li>
-                <li><a className="dropdown-item" href="#">Customers</a></li>
-            </ul>
+            <Header />
+            <div>
+                <button id="adminSection" type="button" className="btn btn-primary dropdown-toggle mt-3" data-bs-toggle="dropdown" aria-expanded="false">
+                    {t('admin.selectBtn')}
+                </button>
 
-            <div className="py-5 text-center">
-                <h2>Products
-                    <button type="button" className="btn bg-transparent text-success btn-sm pt-0" data-bs-toggle="modal" data-bs-target="#addProductModal">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-plus-square" viewBox="0 0 16 16">
-                            <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
-                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-                        </svg>
-                    </button>
-                </h2>
-            </div>
+                <ul className="dropdown-menu" aria-labelledby="adminSection">
+                    <li><a className="dropdown-item" href="#">{t('admin.item1')}</a></li>
+                    <li><a className="dropdown-item" href="#">{t('admin.item2')}</a></li>
+                    <li><a className="dropdown-item" href="#">{t('admin.item3')}</a></li>
+                </ul>
 
-            <div className="modal fade" id="addProductModal" tabIndex={-1} aria-labelledby="addProductModalLabel" aria-hidden="true">
-                <div className="modal-dialog">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="modal-title" id="addProductModalLabel">Modal title</h5>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
+                <div className="py-5 text-center">
+                    <h2>{t('admin.title')}
+                        <button type="button" className="btn bg-transparent text-success btn-sm pt-0" data-bs-toggle="modal" data-bs-target="#addProductModal">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-plus-square" viewBox="0 0 16 16">
+                                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                            </svg>
+                        </button>
+                    </h2>
+                </div>
 
-                        <div className="modal-body">
-                            <form onSubmit={handleSubmit} noValidate>
-                                <div className="row">
-                                    <div className="col-lg-6 col-md-4 mb-3">
-                                        <label htmlFor="name">Product name</label>
-                                        <input type="text" className="form-control" id="name" maxLength={50}
-                                            value={name} required onChange={e => setName(e.target.value)} />
-                                        <div className="invalid-feedback">
-                                            Product name is required.
+                <div className="modal fade" id="addProductModal" tabIndex={-1} aria-labelledby="addProductModalLabel" aria-hidden="true">
+                    <div className="modal-dialog">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h5 className="modal-title" id="addProductModalLabel">{t('admin.title')}</h5>
+                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            <div className="modal-body">
+                                <form onSubmit={handleSubmit} noValidate>
+                                    <div className="row">
+                                        <div className="col-lg-6 col-md-4 mb-3">
+                                            <label htmlFor="name">{t('admin.productName')}</label>
+                                            <input type="text" className="form-control" id="name" maxLength={50}
+                                                value={name} required onChange={e => setName(e.target.value)} />
+                                            <div className="invalid-feedback">
+                                                {t('admin.prRequired')}
+                                            </div>
+                                        </div>
+
+                                        <div className="col-lg-6 col-md-4 mb-3">
+                                            <label htmlFor="brand">{t('admin.brand')}</label>
+                                            <input type="text" className="form-control" id="brand" maxLength={50}
+                                                value={brand} required onChange={e => setBrand(e.target.value)} />
+                                            <div className="invalid-feedback">
+                                                {t('admin.brandRequired')}
+                                            </div>
+                                        </div>
+
+                                        <div className="col-lg-6 col-md-4 mb-3">
+                                            <label htmlFor="quantity">{t('admin.quantity')}</label>
+                                            <input type="number" className="form-control" id="quantity"
+                                                value={quantity} required onChange={e => setQuantity(parseInt(e.target.value))} />
+                                            <div className="invalid-feedback">
+                                                {t('admin.qtyRequired')}
+                                            </div>
+                                        </div>
+
+                                        <div className="col-lg-6 col-md-4 mb-3">
+                                            <label htmlFor="price">{t('admin.price')}</label>
+                                            <input type="number" className="form-control" id="price"
+                                                value={price} required onChange={e => setPrice(parseInt(e.target.value))} />
+                                            <div className="invalid-feedback">
+                                                {t('admin.priceRequired')}
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div className="col-lg-6 col-md-4 mb-3">
-                                        <label htmlFor="brand">Brand</label>
-                                        <input type="text" className="form-control" id="brand" maxLength={50}
-                                            value={brand} required onChange={e => setBrand(e.target.value)} />
-                                        <div className="invalid-feedback">
-                                            Brand is required.
-                                        </div>
-                                    </div>
-
-                                    <div className="col-lg-6 col-md-4 mb-3">
-                                        <label htmlFor="quantity">Quantity</label>
-                                        <input type="number" className="form-control" id="quantity"
-                                            value={quantity} required onChange={e => setQuantity(parseInt(e.target.value))} />
-                                        <div className="invalid-feedback">
-                                            Product quantity is required.
-                                        </div>
-                                    </div>
-
-                                    <div className="col-lg-6 col-md-4 mb-3">
-                                        <label htmlFor="price">Price</label>
-                                        <input type="number" className="form-control" id="price"
-                                            value={price} required onChange={e => setPrice(parseInt(e.target.value))} />
-                                        <div className="invalid-feedback">
-                                            Product price is required.
-                                        </div>
-                                    </div>
+                                    <br></br>
+                                    <button className="btn btn-primary btn-sm" type="submit">{t('admin.addBtn')}</button>
+                                </form>
+                            </div>
+                            <div className="modal-footer">
+                                <div className={errorClass}>
+                                    {errorMessage}
                                 </div>
-
-                                <br></br>
-                                <button className="btn btn-primary btn-sm" type="submit">Add product</button>
-                            </form>
-                        </div>
-                        <div className="modal-footer">
-                            <div className={errorClass}>
-                                {errorMessage}
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Brand</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {productRows}
-                </tbody>
-            </table>
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">{t('admin.productName')}</th>
+                            <th scope="col">{t('admin.brand')}</th>
+                            <th scope="col">{t('admin.quantity')}</th>
+                            <th scope="col">{t('admin.price')}</th>
+                            <th scope="col">{t('admin.delete')}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {productRows}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 }

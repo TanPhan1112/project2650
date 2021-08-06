@@ -1,14 +1,102 @@
 {
-  "nav1": "Home",
-  "nav2": "About",
-  "nav3": "Products",
-  "nav4": "Contact Us",
-  "nav5": "Account",
-  "search": "Search..",
-  "language": "Language",
-
-  "des": {
-    "part1": "Um loszulegen, ändere <1>src/App.tsx</1> speicheren und neuladen.",
-    "part2": "Ändere die Sprachen zwischen deutsch und englisch mit Hilfe der beiden Schalter."
-  }
+    "header": {
+        "language": "Language",
+        "english": "English",
+        "vietnamese": "Vietnamese",
+        "search": "Search",
+        "searchResult": "Searching result(s) ...",
+        "error": "Product not found!",
+        "errorFound": "Product found!",
+        "home": "Home",
+        "about": "About",
+        "products": "Products",
+        "contact": "Contact",
+        "login": "Log in",
+        "productName": "Product name",
+        "brand": "Brand",
+        "quantity": "Quantity",
+        "price": "Price"
+    },
+    "home": {
+        "h1": "Hello, world!",
+        "p": "This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.",
+        "h3_1": "Dell is cancelling Alienware gaming PC shipments to several US states",
+        "h3_2": "Looks like your Steam Deck could arrive sooner rather than later",
+        "h3_3": "Next-gen AMD Ryzen CPUs may not feature extra cores, but there's far more to Zen 4",
+        "h3_4": "I knew mechanical keyboards were getting cheaper, but $13? That's a steal"
+    },
+    "contact": {
+        "title": "Contact form",
+        "name": "Name",
+        "email": "Email address",
+        "message": "Message",
+        "submit": "Submit",
+        "info": "Contact info",
+        "address": "Address",
+        "phone": "phone"
+    },
+    "products": {
+        "title": "Products",
+        "shoppingCart": "Your shopping cart",
+        "checkout": "Check-out",
+        "close": "Close",
+        "remove": "Remove",
+        "productName": "Product name",
+        "brand": "Brand",
+        "quantity": "Quantity",
+        "price": "Price",
+        "total": "Total",
+        "delete": "Delete"
+    },    
+    "admin": {
+        "selectBtn": "Database Section",
+        "item1": "Products",
+        "item2": "Orders",
+        "item3": "Customers",
+        "products": "Products",
+        "title": "Add products",
+        "productName": "Product name",
+        "prRequired": "Product name is required.",
+        "brand": "Brand",
+        "brandRequired": "Brand is required.",
+        "quantity": "Quantity",
+        "qtyRequired": "Product quantity is required.",
+        "price": "Price",
+        "priceRequired": "Product price is required.",
+        "addBtn": "Add product",
+        "formRequired": "Forms are required.",
+        "error": "Problem finding products!",
+        "delete": "Delete"
+    },
+    "account": {
+        "title1": "Log in",
+        "loginEmail": "E-mail:",
+        "emailRequired": "Email is required.",
+        "password": "Password:",
+        "pwdRequired": "Password is required.",
+        "loginBtn": "Log in",
+        "title2": "Create an account",
+        "firstName": "First name:",
+        "fnRequired": "First name is required.",
+        "lastName": "Last name:",
+        "lnRequired": "Last name is required.",
+        "signUp": "Sign up",
+        "formRequired": "Forms are required.",
+        "success": "Successfully created account",
+        "error": "Account not found! or incorrect email/password!",
+        "successLogin": "Account found! Welcome!!!"
+    },
+    "about": {
+        "h2": "Welcome you to visit our website!",
+        "contact": "Contact developers:"
+    },
+    "footer": {
+        "footerTitle": "Join Our Newsletter",
+        "footerHeading": "Sign up to all the latest news!",
+        "email": "Email address",
+        "signUp": "Sign Me Up!",
+        "reset": "Reset",
+        "copyright": "Copyright",
+        "createdBy": "Created by"
+    }
 }

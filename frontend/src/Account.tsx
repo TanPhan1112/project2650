@@ -3,6 +3,9 @@ import './Account.css';
 import client from './feathers';
 import { useHistory } from "react-router-dom";
 import ReactGA from 'react-ga';
+import Header from './Header';
+import Footer from './Footer';
+import { useTranslation } from 'react-i18next';
 
 interface Signup {
     data: any;
@@ -31,6 +34,7 @@ signupsService.on('created', (newAccount: Signup) => {
 });
 
 function Account() {
+    const { t } = useTranslation();
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -38,7 +42,7 @@ function Account() {
     const [password, setPassword] = useState("");
     const [password1, setPassword1] = useState("");
     const [allAccounts, setAllAccounts] = useState<Array<Signup>>([]);
-    const [errorMessage, setErrorMessage] = useState("Forms are required");
+    const [errorMessage, setErrorMessage] = useState(t('account.formRequired'));
     const [errorClass, setErrorClass] = useState("form-control");
     const history = useHistory();
 
@@ -69,7 +73,7 @@ function Account() {
                 setLastName("");
                 setEmail("");
                 setPassword("");
-                setErrorMessage("Successfully created account");
+                setErrorMessage(t('account.success'));
                 setErrorClass("form-control is-valid");
                 ReactGA.event({
                     category: "Guest",
@@ -106,7 +110,7 @@ function Account() {
                     });
                     if (signup.data[0].email !== undefined) {
                         if (signup.data[0].email === "pctechAdmin@pctech.com") {
-                            setErrorMessage("Admin found! Redirecting to admin page ...");
+                            setErrorMessage(t('account.successLogin'));
                             setErrorClass("form-control is-valid");
                             history.push("/Admin");
                             ReactGA.event({
@@ -114,18 +118,18 @@ function Account() {
                                 action: "Login",
                             });
                         } else {
-                            setErrorMessage("Account found! Welcome!!!");
+                            setErrorMessage(t('account.successLogin'));
                             setErrorClass("form-control is-valid");
                         }
                     }
                     else if (signup.data[0].length() === 0) {
-                        setErrorMessage("Account not found! or incorrect email/password!");
+                        setErrorMessage(t('account.error'));
                         setErrorClass("form-control is-invalid");
                     }
                 })
                 .catch((err: any) => {
                     // failed to create account
-                    setErrorMessage("Account not found! or incorrect email/password!");
+                    setErrorMessage(t('account.error'));
                     setErrorClass("form-control is-invalid");
                 });
         } else {
@@ -134,64 +138,52 @@ function Account() {
     }
 
     return (
-        <div id="wrapper">
-            <main>
-                <h1>Log In</h1>
-                <form onSubmit={handleSubmit2} noValidate>
-                    <label htmlFor="myEmail">E-mail:</label>
-                    <input type="text" name="myEmail" className="myEmail form-control" value={email1} required onChange={e => setEmail1(e.target.value)} />
-                    <div className="invalid-feedback">Email is required.</div>
-                    <label htmlFor="passWord">Password:</label>
-                    <input type="password" name="passWord" className="passWord form-control" value={password1} required onChange={e => setPassword1(e.target.value)} />
-                    <div className="invalid-feedback">Password is required.</div>
-                    <button className="mySubmit" type="submit">Log in</button>
-                </form>
-                <h1>Create an account</h1>
-                <form onSubmit={e => onClick(e)} noValidate>
-                    <label htmlFor="firstName">First name:</label>
-                    <input type="text" name="firstName" className="firstName form-control" value={firstName} required onChange={e => setFirstName(e.target.value)} />
-                    <div className="invalid-feedback">First name is required.</div>
-                    <label htmlFor="lastName">Last name:</label>
-                    <input type="text" name="lastName" className="lastName form-control" value={lastName} required onChange={e => setLastName(e.target.value)} />
-                    <div className="invalid-feedback">Last name is required.</div>
-                    <label htmlFor="myEmail">E-mail:</label>
-                    <input type="email" name="myEmail" className="myEmail form-control" value={email} required onChange={e => setEmail(e.target.value)} />
-                    <div className="invalid-feedback">Email is required.</div>
-                    <label htmlFor="passWord">Password:</label>
-                    <input type="password" name="passWord" className="passWord form-control" value={password} required onChange={e => setPassword(e.target.value)} />
-                    <div className="invalid-feedback">Password is required.</div>
-                    <button className="btn btn-primary btn-lg btn-block g-recaptcha">Signup</button>
-                    <div className={errorClass}>
-                        {errorMessage}
-                    </div>
-                </form>
-            </main>
+        <div>
+            <Header />
+            <div id="wrapper">
+                <main>
+                    <h1>{t('account.title1')}</h1>
 
-            <footer className="footer mt-auto py-3 bg-light">
-                <div className="container">
-                    <h3 className="text-center">Join Our Newsletter</h3>
-                    <h6 className="text-center">Sign up to all the latest offers, news and tips!</h6>
+                    <form onSubmit={handleSubmit2} noValidate>
+                        <label htmlFor="myEmail">{t('account.loginEmail')}</label>
+                        <input type="text" name="myEmail" className="myEmail form-control" value={email1} required onChange={e => setEmail1(e.target.value)} />
+                        <div className="invalid-feedback">{t('account.emailRequired')}</div>
 
+                        <label htmlFor="passWord">{t('account.password')}</label>
+                        <input type="password" name="passWord" className="passWord form-control" value={password1} required onChange={e => setPassword1(e.target.value)} />
+                        <div className="invalid-feedback">{t('account.pwdRequired')}</div>
 
-                    <form method="get">
-                        <div className="row justify-content-center">
-                            <input type="email" className="col-4" name="email" id="email" placeholder="Email address" />
-                            <input className="col-2 signup btn btn-primary" type="submit" value="Sign me up!" />
-                            <input className="col-1 signup btn btn-primary" type="reset" />
-                        </div>
+                        <button className="mySubmit" type="submit">{t('account.loginBtn')}</button>
                     </form>
 
+                    <h1>{t('account.title2')}</h1>
 
-                    <figure className="text-center">
-                        <blockquote className="blockquote">
-                            <p>Copyright &copy; 2021 pctech.com</p>
-                        </blockquote>
-                        <figcaption className="blockquote-footer">
-                            Created by <cite title="authors">Phan, Duc Minh Tan and Nguyen, Hoang Nam</cite>
-                        </figcaption>
-                    </figure>
-                </div>
-            </footer>
+                    <form onSubmit={e => onClick(e)} noValidate>
+                        <label htmlFor="firstName">{t('account.firstName')}</label>
+                        <input type="text" name="firstName" className="firstName form-control" value={firstName} required onChange={e => setFirstName(e.target.value)} />
+                        <div className="invalid-feedback">{t('account.fnRequired')}</div>
+
+                        <label htmlFor="lastName">{t('account.lastName')}</label>
+                        <input type="text" name="lastName" className="lastName form-control" value={lastName} required onChange={e => setLastName(e.target.value)} />
+                        <div className="invalid-feedback">{t('account.lnRequired')}</div>
+
+                        <label htmlFor="myEmail">{t('account.loginEmail')}</label>
+                        <input type="email" name="myEmail" className="myEmail form-control" value={email} required onChange={e => setEmail(e.target.value)} />
+                        <div className="invalid-feedback">{t('account.emailRequired')}</div>
+
+                        <label htmlFor="passWord">{t('account.password')}</label>
+                        <input type="password" name="passWord" className="passWord form-control" value={password} required onChange={e => setPassword(e.target.value)} />
+                        <div className="invalid-feedback">{t('account.pwdRequired')}</div>
+
+                        <button className="btn btn-primary btn-lg btn-block g-recaptcha">{t('account.signUp')}</button>
+
+                        <div className={errorClass}>
+                            {errorMessage}
+                        </div>
+                    </form>
+                </main>
+            </div>
+            <Footer />
         </div>
     );
 }

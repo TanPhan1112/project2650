@@ -1,14 +1,102 @@
 {
-  "nav1": "Trang chủ",
-  "nav2": "Giới thiệu",
-  "nav3": "Sản phẩm",
-  "nav4": "Liên hệ",
-  "nav5": "Tài khoản",
-  "search": "Tìm kiếm",
-  "language": "Ngôn ngữ",
-
-  "des": {
-    "part1": "Um loszulegen, ändere <1>src/App.tsx</1> speicheren und neuladen.",
-    "part2": "Ändere die Sprachen zwischen deutsch und englisch mit Hilfe der beiden Schalter."
-  }
+    "header": {
+        "language": "Ngôn ngữ",
+        "english": "Tiếng Anh",
+        "vietnamese": "Tiếng Việt",
+        "search": "Tìm kiếm",
+        "searchResult": "Kết quả tìm kiếm ...",
+        "error": "Không tìm thấy sản phẩm!",
+        "errorFound": "Tìm thấy sản phẩm!",
+        "home": "Trang chủ",
+        "about": "Giới thiệu",
+        "products": "Sản Phẩm",
+        "contact": "Liện hệ",
+        "login": "Đăng nhập",
+        "productName": "Tên sản phẩm",
+        "brand": "Thương hiệu",
+        "quantity": "Số lượng",
+        "price": "Giá"
+    },
+    "home": {
+        "h1": "Xin chào!",
+        "p": "Đây là một mẫu cho một trang web tiếp thị hoặc thông tin đơn giản. Nó bao gồm một chú thích lớn được gọi là jumbotron và ba phần nội dung hỗ trợ. Sử dụng nó như một điểm khởi đầu để tạo ra một cái gì đó độc đáo hơn.",
+        "h3_1": "Dell đang hủy các lô hàng PC chơi game Alienware đến một số tiểu bang của Hoa Kỳ",
+        "h3_2": "Có vẻ như Steam Deck của bạn có thể đến sớm hơn là muộn hơn",
+        "h3_3": "CPU AMD Ryzen thế hệ tiếp theo có thể không có thêm lõi, nhưng có nhiều hơn thế đối với Zen 4",
+        "h3_4": "Tôi biết bàn phím cơ ngày càng rẻ hơn, nhưng 13 đô la? Đó là ăn cắp"
+    },
+    "contact": {
+        "title": "Liện hệ",
+        "name": "Tên",
+        "email": "Địa chỉ email",
+        "message": "Lời nhắn",
+        "submit": "Gửi đi",
+        "info": "Thông tin liên lạc",
+        "address": "Địa chỉ",
+        "phone": "Số điện thoại"
+    },
+    "products": {
+        "title": "Sản phẩm",
+        "shoppingCart": "Giỏ hàng",
+        "checkout": "Thanh toán",
+        "close": "Đóng",
+        "remove": "Xóa",
+        "productName": "Tên sản phẩm",
+        "brand": "Thương hiệu",
+        "quantity": "Số lượng",
+        "price": "Giá",
+        "total": "Tổng cộng",
+        "delete": "Xóa bỏ"
+    },
+    "admin": {
+        "selectBtn": "Phần cơ sở dữ liệu",
+        "item1": "Các sản phẩm",
+        "item2": "Đơn hàng",
+        "item3": "Khách hàng",
+        "products": "Các sản phẩm",
+        "title": "Thêm sản phẩm",
+        "productName": "Tên sản phẩm",
+        "prRequired": "Tên sản phẩm là bắt buộc.",
+        "brand": "Thương hiệu",
+        "brandRequired": "Thương hiệu là bắt buộc.",
+        "quantity": "Số lượng",
+        "qtyRequired": "Số lượng là bắt buộc.",
+        "price": "Giá",
+        "priceRequired": "Giá là bắt buộc.",
+        "addBtn": "Thêm sản phẩm",
+        "formRequired": "Thông tin là bắt buộc.",
+        "error": "Không tìm thấy sản phẩm!",
+        "delete": "Xóa bỏ"
+    },
+    "account": {
+        "title1": "Đăng nhập",
+        "loginEmail": "E-mail:",
+        "emailRequired": "Email bắt buộc.",
+        "password": "Mật khẩu:",
+        "pwdRequired": "Mật khẩu bắt buộc.",
+        "loginBtn": "Đăng nhập",
+        "title2": "Tạo một tài khoản",
+        "firstName": "Họ:",
+        "fnRequired": "Họ bắt buộc.",
+        "lastName": "Tên:",
+        "lnRequired": "Tên bắt buộc.",
+        "signUp": "Đăng ký",
+        "formRequired": "Thông tin là bắt buộc.",
+        "success": "Đã tạo thành công tài khoản",
+        "error": "Tài khoản không được tìm thấy! hoặc email / mật khẩu không chính xác!",
+        "successLogin": "Đã tìm thấy tài khoản! Chào mừng!!!"
+    },
+    "about": {
+        "h2": "Chào mừng bạn đến thăm trang web của chúng tôi!",
+        "contact": "Liên hệ với các nhà phát triển:"
+    },
+    "footer": {
+        "footerTitle": "Tham gia bản tin của chúng tôi",
+        "footerHeading": "Đăng ký để nhận tất cả các tin tức mới nhất!",
+        "email": "Địa chỉ email",
+        "signUp": "Đăng ký cho tôi!",
+        "reset": "Reset lại email",
+        "copyright": "Bản quyền",
+        "createdBy": "Được tạo bởi"
+    }
 }
